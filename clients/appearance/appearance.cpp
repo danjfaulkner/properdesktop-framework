@@ -26,7 +26,7 @@ Appearance::Appearance()
     }
     for (const char* member : {"darkModeChanged", "darkModeScheduleChanged", "wallpaperChanged",
                                "userWallpapersChanged", "wallpaperFoldersChanged", "continuousCornersChanged",
-                               "reduceTransparencyChanged", "coloredWindowControlsChanged", "accentColorChanged", "backgroundTypeChanged",
+                               "reduceTransparencyChanged", "coloredWindowControlsChanged", "windowButtonsOnRightChanged", "accentColorChanged", "backgroundTypeChanged",
                                "backgroundColorChanged", "cursorThemeChanged", "cursorSizeChanged",
                                "iconThemeChanged", "systemFontPointSizeChanged", "systemFontChanged"}) {
         m_matches.push_back(m_service.onSignal(member, [this](const dbus::Message&) { reload(); }));
@@ -121,6 +121,16 @@ bool Appearance::coloredWindowControls() const
 void Appearance::setColoredWindowControls(bool colored)
 {
     m_service.send("setColoredWindowControls", colored);
+}
+
+bool Appearance::windowButtonsOnRight() const
+{
+    return value<bool>("windowButtonsOnRight", true);
+}
+
+void Appearance::setWindowButtonsOnRight(bool onRight)
+{
+    m_service.send("setWindowButtonsOnRight", onRight);
 }
 
 int Appearance::accentColor() const

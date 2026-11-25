@@ -47,6 +47,10 @@ public:
     // The title bar controls as red, yellow and green dots instead of plates.
     bool coloredWindowControls() const;
     void setColoredWindowControls(bool colored);
+    // Where applications that draw their own window buttons (browsers and the like) put them;
+    // Cutefish's own applications keep theirs on the left.
+    bool windowButtonsOnRight() const;
+    void setWindowButtonsOnRight(bool onRight);
     // An index into the accent colours: blue, red, green, purple, pink,
     // orange, grey.
     int accentColor() const;
