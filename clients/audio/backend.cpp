@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/audio/backend.h"
+#include "properdesktop/audio/backend.h"
 
 #include <algorithm>
 #include <cerrno>
@@ -22,11 +22,11 @@
 #include "framework_i18n.h"
 
 using namespace std::chrono_literals;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
-using cutefish::i18n::trNoop;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
+using properdesktop::i18n::trNoop;
 
-namespace cutefish::audio {
+namespace properdesktop::audio {
 
 // The "name" of a metadata value such as {"name":"alsa_output.pci"}.
 static std::string jsonName(const char* value)
@@ -348,7 +348,7 @@ void Backend::connectToDaemon()
         m_context = pw_context_new(m_loop, nullptr, 0);
     if (m_context) {
         m_core = pw_context_connect(
-            m_context, pw_properties_new(PW_KEY_APP_NAME, "Cutefish Audio", PW_KEY_APP_ID, "org.cutefish.Audio", nullptr),
+            m_context, pw_properties_new(PW_KEY_APP_NAME, "Proper Desktop Audio", PW_KEY_APP_ID, "org.properdesktop.Audio", nullptr),
             0);
     }
     if (!m_core) {
@@ -476,7 +476,7 @@ void Backend::addGlobal(uint32_t id, uint32_t permissions, const char* type, uin
     if (!mediaClass || m_bindings.contains(id))
         return;
     const char* nodeName = spa_dict_lookup(properties, PW_KEY_NODE_NAME);
-    if (nodeName && std::string_view(nodeName).starts_with("cutefish.internal."))
+    if (nodeName && std::string_view(nodeName).starts_with("properdesktop.internal."))
         return;
     // WirePlumber's "Dummy Output", which stands in while no real sink exists.
     if (nodeName && std::strcmp(nodeName, "auto_null") == 0)
@@ -719,4 +719,4 @@ void Backend::moveStream(AudioObject* stream, uint32_t target)
                     trNoop("Move audio stream"));
 }
 
-} // namespace cutefish::audio
+} // namespace properdesktop::audio

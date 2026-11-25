@@ -13,12 +13,12 @@
 #include "base/signal.h"
 #include "base/thread_pool.h"
 #include "base/timer.h"
-#include "cutefish/files/error.h"
-#include "cutefish/files/file_item.h"
-#include "cutefish/files/file_watcher.h"
-#include "cutefish/files/operation_context.h"
+#include "properdesktop/files/error.h"
+#include "properdesktop/files/file_item.h"
+#include "properdesktop/files/file_watcher.h"
+#include "properdesktop/files/operation_context.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // Lists a folder, or the whole trash for trash:/, on a pool thread and keeps the
 // listing up to date while auto update is on. A refresh keeps the detected
@@ -118,4 +118,4 @@ private:
     base::Timer m_foundTimer;
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

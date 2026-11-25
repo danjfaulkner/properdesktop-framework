@@ -10,7 +10,7 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::accounts {
+namespace properdesktop::accounts {
 
 // One account as org.freedesktop.Accounts keeps it. Reads never wait on the
 // bus: a getter returns the cached value, filled when the account is made
@@ -108,4 +108,4 @@ private:
     std::map<std::string, int> m_pendingCalls;
 };
 
-} // namespace cutefish::accounts
+} // namespace properdesktop::accounts

@@ -8,9 +8,9 @@
 #include <fstream>
 #include <unistd.h>
 
-#include "cutefish/accounts/account_picture.h"
+#include "properdesktop/accounts/account_picture.h"
 
-using namespace cutefish::accounts;
+using namespace properdesktop::accounts;
 namespace fs = std::filesystem;
 
 class AccountPictureTest : public ::testing::Test

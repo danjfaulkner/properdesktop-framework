@@ -8,9 +8,9 @@
 
 #include "base/dbus.h"
 #include "base/signal.h"
-#include "cutefish/packagekit/transaction.h"
+#include "properdesktop/packagekit/transaction.h"
 
-namespace cutefish::packagekit {
+namespace properdesktop::packagekit {
 
 // One package, found by name and installed with what it depends on through
 // PackageKit. The getters never block.
@@ -74,4 +74,4 @@ private:
     std::string m_error;
 };
 
-} // namespace cutefish::packagekit
+} // namespace properdesktop::packagekit

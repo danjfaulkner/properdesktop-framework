@@ -9,9 +9,9 @@
 #include "base/i18n.h"
 
 // The framework's own text, in its own catalog whatever the program's domain.
-namespace cutefish::framework {
+namespace properdesktop::framework {
 
-inline constexpr const char* kTranslationDomain = "cutefish-framework";
+inline constexpr const char* kTranslationDomain = "properdesktop-framework";
 
 inline const char* translationDomain()
 {
@@ -35,4 +35,4 @@ inline std::string trn(const char* singular, const char* plural, uint64_t n)
     return i18n::dtrn(translationDomain(), singular, plural, n);
 }
 
-} // namespace cutefish::framework
+} // namespace properdesktop::framework

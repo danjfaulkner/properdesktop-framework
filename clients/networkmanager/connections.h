@@ -8,9 +8,9 @@
 
 #include "base/dbus.h"
 #include "base/signal.h"
-#include "cutefish/networkmanager/types.h"
+#include "properdesktop/networkmanager/types.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 class Client;
 
@@ -87,4 +87,4 @@ private:
     bool m_availableToOtherUsers = false;
 };
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

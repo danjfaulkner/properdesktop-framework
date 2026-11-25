@@ -9,13 +9,13 @@
 #include <thread>
 
 #include "base/event_loop.h"
-#include "cutefish/files/volume_manager.h"
+#include "properdesktop/files/volume_manager.h"
 #include "testing.h"
 
-using namespace cutefish;
-using namespace cutefish::base;
-using namespace cutefish::base::dbus;
-using namespace cutefish::files;
+using namespace properdesktop;
+using namespace properdesktop::base;
+using namespace properdesktop::base::dbus;
+using namespace properdesktop::files;
 using namespace std::chrono_literals;
 using Interfaces = VolumeManager::Interfaces;
 

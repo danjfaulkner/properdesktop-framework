@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/file_path.h"
+#include "properdesktop/files/file_path.h"
 
 #include <cerrno>
 
-#include "cutefish/files/error.h"
+#include "properdesktop/files/error.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 FilePath::FilePath(std::string bytes)
     : m_bytes(std::move(bytes))
@@ -35,4 +35,4 @@ FilePath FilePath::child(const std::string& name) const
     return FilePath(m_bytes + (m_bytes.back() == '/' ? "" : "/") + name);
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

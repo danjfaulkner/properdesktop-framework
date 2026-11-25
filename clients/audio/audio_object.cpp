@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/audio/audio_object.h"
+#include "properdesktop/audio/audio_object.h"
 
 #include <algorithm>
 #include <charconv>
@@ -15,9 +15,9 @@
 #include <spa/pod/parser.h>
 #include <spa/pod/iter.h>
 
-#include "cutefish/audio/backend.h"
+#include "properdesktop/audio/backend.h"
 
-namespace cutefish::audio {
+namespace properdesktop::audio {
 
 template<typename T>
 static std::vector<T> arrayValues(const spa_pod* pod, uint32_t type)
@@ -423,4 +423,4 @@ int AudioObject::updateRoute(const spa_pod* param, bool current)
     return current ? device : -1;
 }
 
-} // namespace cutefish::audio
+} // namespace properdesktop::audio

@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/network_model.h"
-#include "cutefish/networkmanager/client.h"
-#include "cutefish/networkmanager/inet.h"
-#include "cutefish/networkmanager/text.h"
-#include "cutefish/networkmanager/variants.h"
-#include "cutefish/networkmanager/vpn_utils.h"
-#include "cutefish/networkmanager/wifi_utils.h"
+#include "properdesktop/networkmanager/network_model.h"
+#include "properdesktop/networkmanager/client.h"
+#include "properdesktop/networkmanager/inet.h"
+#include "properdesktop/networkmanager/text.h"
+#include "properdesktop/networkmanager/variants.h"
+#include "properdesktop/networkmanager/vpn_utils.h"
+#include "properdesktop/networkmanager/wifi_utils.h"
 
 #include <algorithm>
 #include <cctype>
@@ -20,13 +20,13 @@
 #include "base/locale.h"
 #include "framework_i18n.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 using base::dbus::Variant;
 using base::dbus::VariantMap;
 using namespace variants;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
 static const std::string connectionSetting = "connection";
 static const std::string wirelessSetting = "802-11-wireless";
@@ -579,4 +579,4 @@ std::vector<NetworkItem> listItems(const std::vector<NetworkItem>& items, Connec
     return list;
 }
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

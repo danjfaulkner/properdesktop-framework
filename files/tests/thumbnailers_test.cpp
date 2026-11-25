@@ -12,15 +12,15 @@
 
 #include "base/elapsed_timer.h"
 #include "base/strings.h"
-#include "cutefish/files/mime_sniffer_p.h"
-#include "cutefish/files/thumbnails/md5_p.h"
-#include "cutefish/files/thumbnails/thumbnail_cache.h"
-#include "cutefish/files/url.h"
+#include "properdesktop/files/mime_sniffer_p.h"
+#include "properdesktop/files/thumbnails/md5_p.h"
+#include "properdesktop/files/thumbnails/thumbnail_cache.h"
+#include "properdesktop/files/url.h"
 #include "testing.h"
 
-using namespace cutefish;
-using namespace cutefish::files;
-using namespace cutefish::files::testing;
+using namespace properdesktop;
+using namespace properdesktop::files;
+using namespace properdesktop::files::testing;
 using namespace std::chrono_literals;
 
 static std::string localUrl(const std::string& path)
@@ -277,7 +277,7 @@ TEST_F(ThumbnailersTest, FailureIsRemembered)
     EXPECT_TRUE(thumbnail.image.isNull());
 
     const std::string name = internal::md5Hex(localUrl(table));
-    EXPECT_TRUE(exists(s_cache + "/fail/cutefish/" + name + ".png"));
+    EXPECT_TRUE(exists(s_cache + "/fail/properdesktop/" + name + ".png"));
 }
 
 TEST_F(ThumbnailersTest, HangingThumbnailerIsStopped)
@@ -306,7 +306,7 @@ TEST_F(ThumbnailersTest, HangingThumbnailerIsStopped)
 TEST_F(ThumbnailersTest, SkipsMissingPrograms)
 {
     EXPECT_FALSE(ThumbnailCache::self()->canThumbnail("application/json"));
-    EXPECT_FALSE(ThumbnailCache::self()->canThumbnail("application/x-cutefish-unknown"));
+    EXPECT_FALSE(ThumbnailCache::self()->canThumbnail("application/x-properdesktop-unknown"));
 }
 
 TEST_F(ThumbnailersTest, PicksUpNewThumbnailers)

@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/bluez/bluetooth_object.h"
+#include "properdesktop/bluez/bluetooth_object.h"
 
-#include "cutefish/bluez/manager.h"
+#include "properdesktop/bluez/manager.h"
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::bluez {
+namespace properdesktop::bluez {
 
 BluetoothObject::BluetoothObject(std::string path, Manager* manager)
     : m_path(std::move(path))
@@ -290,4 +290,4 @@ void BluetoothObject::setFirmwareRevision(const std::string& firmwareRevision)
     changed.emit();
 }
 
-} // namespace cutefish::bluez
+} // namespace properdesktop::bluez

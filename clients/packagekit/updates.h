@@ -11,9 +11,9 @@
 
 #include "base/dbus.h"
 #include "base/signal.h"
-#include "cutefish/packagekit/transaction.h"
+#include "properdesktop/packagekit/transaction.h"
 
-namespace cutefish::packagekit {
+namespace properdesktop::packagekit {
 
 // Asks the bus once whether PackageKit runs there or can be started there;
 // dropping it drops the answer.
@@ -114,4 +114,4 @@ private:
     bool m_background = false;
 };
 
-} // namespace cutefish::packagekit
+} // namespace properdesktop::packagekit

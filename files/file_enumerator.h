@@ -8,10 +8,10 @@
 #include <string>
 #include <vector>
 
-#include "cutefish/files/file_item.h"
-#include "cutefish/files/operation_context.h"
+#include "properdesktop/files/file_item.h"
+#include "properdesktop/files/operation_context.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 class FileEnumerator
 {
@@ -27,4 +27,4 @@ public:
     static uint64_t size(const std::string& path, OperationContext& context);
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

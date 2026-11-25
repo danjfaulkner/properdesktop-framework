@@ -12,7 +12,7 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::upower {
+namespace properdesktop::upower {
 
 // One sample of a device's history, as UPower records it.
 struct HistorySample
@@ -85,4 +85,4 @@ private:
 // A whole number of any of D-Bus's integer types, or the fallback.
 int64_t integerValue(const base::dbus::Variant& value, int64_t fallback = 0);
 
-} // namespace cutefish::upower
+} // namespace properdesktop::upower

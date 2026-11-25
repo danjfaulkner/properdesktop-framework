@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/wifi_utils.h"
+#include "properdesktop/networkmanager/wifi_utils.h"
 
 #include <algorithm>
 #include <cctype>
@@ -22,9 +22,9 @@
 #include "base/locale.h"
 #include "framework_i18n.h"
 
-using cutefish::framework::tr;
+using properdesktop::framework::tr;
 
-namespace cutefish::networkmanager::wifi {
+namespace properdesktop::networkmanager::wifi {
 
 // SSIDs set before UTF-8 took over are in the legacy charset of the router
 // owner's language. The code pages most setup pages wrote in come before
@@ -706,4 +706,4 @@ std::map<std::string, WifiStandard> scanStandards(const std::string& interfaceNa
     return result;
 }
 
-} // namespace cutefish::networkmanager::wifi
+} // namespace properdesktop::networkmanager::wifi

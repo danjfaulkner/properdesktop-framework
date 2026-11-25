@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/packagekit/updates.h"
+#include "properdesktop/packagekit/updates.h"
 
 #include <algorithm>
 
-using namespace cutefish::base::dbus;
+using namespace properdesktop::base::dbus;
 
-namespace cutefish::packagekit {
+namespace properdesktop::packagekit {
 
 static constexpr const char* kService = "org.freedesktop.PackageKit";
 static constexpr const char* kPath = "/org/freedesktop/PackageKit";
@@ -245,4 +245,4 @@ void Updates::fail(const std::string& error, bool checked)
         checkFinished.emit(false);
 }
 
-} // namespace cutefish::packagekit
+} // namespace properdesktop::packagekit

@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/secret_reader.h"
-#include "cutefish/networkmanager/variants.h"
+#include "properdesktop/networkmanager/secret_reader.h"
+#include "properdesktop/networkmanager/variants.h"
 
 #include <chrono>
 
 #include "base/timer.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 using namespace std::chrono_literals;
 using base::dbus::Message;
@@ -216,4 +216,4 @@ void SecretReader::closeSession(const std::string& session)
     call(session, sessionInterface, "Close", {}, [](const base::dbus::Reply&) {});
 }
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

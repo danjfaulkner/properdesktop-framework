@@ -5,7 +5,7 @@ find_program(PW_CLI_EXECUTABLE pw-cli REQUIRED)
 
 add_executable(audio-client-tests audio_test.cpp)
 set_target_properties(audio-client-tests PROPERTIES AUTOMOC OFF AUTORCC OFF)
-target_link_libraries(audio-client-tests PRIVATE Cutefish::AudioClient GTest::gtest_main)
+target_link_libraries(audio-client-tests PRIVATE ProperDesktop::AudioClient GTest::gtest_main)
 target_compile_definitions(audio-client-tests PRIVATE
     AUDIO_TEST_CONFIG="${CMAKE_CURRENT_SOURCE_DIR}/pipewire.conf"
     WIREPLUMBER_TEST_CONFIG="${CMAKE_CURRENT_SOURCE_DIR}/wireplumber-test.conf"

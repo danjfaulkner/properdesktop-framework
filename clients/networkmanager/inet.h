@@ -9,7 +9,7 @@
 #include <string>
 
 // IP addresses as text and as NetworkManager's numbers.
-namespace cutefish::networkmanager::inet {
+namespace properdesktop::networkmanager::inet {
 
 // Four decimal parts only, not the shorter inet_aton() forms; host order.
 std::optional<uint32_t> parseIpv4(const std::string& text);
@@ -26,4 +26,4 @@ int family(const std::string& text);
 std::string normalized(const std::string& text);
 bool isLinkLocal(const std::string& text);
 
-} // namespace cutefish::networkmanager::inet
+} // namespace properdesktop::networkmanager::inet

@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/upower/device.h"
+#include "properdesktop/upower/device.h"
 
 #include <chrono>
 #include <tuple>
 
-using namespace cutefish::base::dbus;
+using namespace properdesktop::base::dbus;
 
-namespace cutefish::upower {
+namespace properdesktop::upower {
 
 static constexpr const char* kService = "org.freedesktop.UPower";
 static constexpr const char* kInterface = "org.freedesktop.UPower.Device";
@@ -132,4 +132,4 @@ void Device::merge(const VariantMap& properties)
         m_properties[name] = value;
 }
 
-} // namespace cutefish::upower
+} // namespace properdesktop::upower

@@ -13,13 +13,13 @@
 #include <vector>
 
 #include "base/event_loop.h"
-#include "cutefish/upower/battery_status.h"
-#include "cutefish/upower/device.h"
+#include "properdesktop/upower/battery_status.h"
+#include "properdesktop/upower/device.h"
 
-using namespace cutefish;
-using namespace cutefish::base;
-using namespace cutefish::base::dbus;
-using namespace cutefish::upower;
+using namespace properdesktop;
+using namespace properdesktop::base;
+using namespace properdesktop::base::dbus;
+using namespace properdesktop::upower;
 using namespace std::chrono_literals;
 
 namespace {
@@ -39,7 +39,7 @@ T await(std::future<T> future, const char* what)
     return future.get();
 }
 
-// cutefish-services' battery and UPower on the session bus, on a thread of
+// properdesktop-services' battery and UPower on the session bus, on a thread of
 // their own as in other processes.
 class FakeServices
 {
@@ -74,7 +74,7 @@ public:
         return await(result.get_future(), "inService");
     }
 
-    // cutefish-services' battery.
+    // properdesktop-services' battery.
     int32_t chargePercent = 64;
     int64_t lastChargedSecs = 1700000000;
     std::vector<ObjectPath> batteries{{kDevicePath}};
@@ -98,7 +98,7 @@ private:
         m_loop = &loop;
         m_handle = loop.handle();
         std::unique_ptr<Connection> connection = Connection::open(Connection::Bus::Session, &loop);
-        if (!connection || !connection->requestName("org.cutefish.Services")
+        if (!connection || !connection->requestName("org.properdesktop.Services")
             || !connection->requestName("org.freedesktop.UPower")) {
             ready.set_value(false);
             return;
@@ -106,8 +106,8 @@ private:
 
         bool published = true;
         if (m_battery) {
-            batteryObject = std::make_unique<Object>(connection.get(), "/org/cutefish/Services/Battery",
-                                                     "org.cutefish.Services.Battery");
+            batteryObject = std::make_unique<Object>(connection.get(), "/org/properdesktop/Services/Battery",
+                                                     "org.properdesktop.Services.Battery");
             Object& battery = *batteryObject;
             battery.addProperty("chargeState", [] { return int32_t(2); });
             battery.addProperty("chargePercent", [this] { return chargePercent; });

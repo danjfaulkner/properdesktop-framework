@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/variants.h"
+#include "properdesktop/networkmanager/variants.h"
 
 #include <cstdlib>
 
-namespace cutefish::networkmanager::variants {
+namespace properdesktop::networkmanager::variants {
 
 using base::dbus::ObjectPath;
 using base::dbus::Signature;
@@ -186,4 +186,4 @@ bool contains(const VariantMap& map, const std::string& key)
     return map.find(key) != map.end();
 }
 
-} // namespace cutefish::networkmanager::variants
+} // namespace properdesktop::networkmanager::variants

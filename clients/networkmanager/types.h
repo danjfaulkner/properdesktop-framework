@@ -10,7 +10,7 @@
 
 #include "base/dbus.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 // A profile as GetSettings sends it: a{sa{sv}}, by setting name.
 using Settings = std::map<std::string, base::dbus::VariantMap>;
@@ -165,4 +165,4 @@ private:
     std::shared_ptr<char> m_token;
 };
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

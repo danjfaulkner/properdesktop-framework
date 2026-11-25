@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/accounts/accounts_manager.h"
+#include "properdesktop/accounts/accounts_manager.h"
 
 #include <algorithm>
 #include <chrono>
@@ -9,10 +9,10 @@
 
 #include "framework_i18n.h"
 
-using namespace cutefish::base;
-using cutefish::framework::tr;
+using namespace properdesktop::base;
+using properdesktop::framework::tr;
 
-namespace cutefish::accounts {
+namespace properdesktop::accounts {
 
 static constexpr const char* kService = "org.freedesktop.Accounts";
 static constexpr const char* kPath = "/org/freedesktop/Accounts";
@@ -207,4 +207,4 @@ void AccountsManager::deleteUser(int64_t uid, bool removeFiles, std::function<vo
     }, kTimeout);
 }
 
-} // namespace cutefish::accounts
+} // namespace properdesktop::accounts

@@ -5,12 +5,12 @@
 
 #include <string>
 
-#include "cutefish/files/operation_context.h"
+#include "properdesktop/files/operation_context.h"
 
-namespace cutefish::files::internal {
+namespace properdesktop::files::internal {
 
 // The shared Applications folder, which only its group may change; others
-// change it through org.cutefish.ApplicationsFolder once an administrator
+// change it through org.properdesktop.ApplicationsFolder once an administrator
 // agreed. Each call blocks while the administrator is asked, and throws a
 // Failure when refused.
 namespace applications_folder {
@@ -38,4 +38,4 @@ void discard(const std::string& staging);
 
 } // namespace applications_folder
 
-} // namespace cutefish::files::internal
+} // namespace properdesktop::files::internal

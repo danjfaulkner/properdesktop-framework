@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/mime_types.h"
+#include "properdesktop/files/mime_types.h"
 
 #include <cstdlib>
 #include <map>
@@ -15,9 +15,9 @@
 #include "base/mime_database.h"
 #include "mime_sniffer_p.h"
 
-namespace cutefish::files::mime {
+namespace properdesktop::files::mime {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 using internal::MimeSniffer;
 
 std::string typeForFile(const std::string& path)
@@ -206,4 +206,4 @@ std::string iconName(const std::string& type)
     return base::mime::iconName(type);
 }
 
-} // namespace cutefish::files::mime
+} // namespace properdesktop::files::mime

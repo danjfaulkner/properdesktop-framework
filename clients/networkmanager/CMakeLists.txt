@@ -1,4 +1,4 @@
-cutefish_add_client(networkmanager TARGET NetworkManagerClient
+properdesktop_add_client(networkmanager TARGET NetworkManagerClient
     SOURCES
         client.cpp
         connections.cpp

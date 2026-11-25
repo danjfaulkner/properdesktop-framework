@@ -1,4 +1,4 @@
-cutefish_add_client(packagekit TARGET PackageKitClient
+properdesktop_add_client(packagekit TARGET PackageKitClient
     SOURCES installer.cpp transaction.cpp updates.cpp
     HEADERS installer.h transaction.h updates.h
 )

@@ -1,17 +1,17 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/appearance/appearance.h"
+#include "properdesktop/appearance/appearance.h"
 
 #include <cstdint>
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::appearance {
+namespace properdesktop::appearance {
 
-static constexpr const char* kService = "org.cutefish.Services";
-static constexpr const char* kPath = "/org/cutefish/Services/Appearance";
-static constexpr const char* kInterface = "org.cutefish.Services.Appearance";
+static constexpr const char* kService = "org.properdesktop.Services";
+static constexpr const char* kPath = "/org/properdesktop/Services/Appearance";
+static constexpr const char* kInterface = "org.properdesktop.Services.Appearance";
 
 Appearance::Appearance()
     : m_service(dbus::Connection::session(), kService, kPath, kInterface)
@@ -286,4 +286,4 @@ void Appearance::setBackgroundColor(const std::string& color)
     m_service.send("setBackgroundColor", color);
 }
 
-} // namespace cutefish::appearance
+} // namespace properdesktop::appearance

@@ -12,19 +12,19 @@
 #include <systemd/sd-bus.h>
 
 #include "base/dbus.h"
-#include "cutefish/networkmanager/types.h"
-#include "cutefish/networkmanager/variants.h"
+#include "properdesktop/networkmanager/types.h"
+#include "properdesktop/networkmanager/variants.h"
 
 // NetworkManager on a bus connection of its own: its objects, profiles and the
 // calls made to it, with the signals NetworkManager sends when they change.
 namespace fakenm {
 
-using cutefish::base::dbus::Connection;
-using cutefish::base::dbus::Message;
-using cutefish::base::dbus::ObjectPath;
-using cutefish::base::dbus::Variant;
-using cutefish::base::dbus::VariantMap;
-using cutefish::networkmanager::Settings;
+using properdesktop::base::dbus::Connection;
+using properdesktop::base::dbus::Message;
+using properdesktop::base::dbus::ObjectPath;
+using properdesktop::base::dbus::Variant;
+using properdesktop::base::dbus::VariantMap;
+using properdesktop::networkmanager::Settings;
 using Interfaces = std::map<std::string, VariantMap>;
 
 inline const std::string managerPath = "/org/freedesktop/NetworkManager";
@@ -70,7 +70,7 @@ struct Call
 // profile, or the error NetworkManager would refuse it with.
 inline std::string completeForAccessPoint(Settings& profile, const VariantMap& ap)
 {
-    using namespace cutefish::networkmanager::variants;
+    using namespace properdesktop::networkmanager::variants;
     constexpr uint32_t privacy = 0x1;
     constexpr uint32_t keyPsk = 0x100, key8021x = 0x200, keySae = 0x400, keyOwe = 0x800 | 0x1000, keySuiteB = 0x2000;
 
@@ -307,7 +307,7 @@ private:
 
     int handle(const Message& message)
     {
-        using namespace cutefish::networkmanager::variants;
+        using namespace properdesktop::networkmanager::variants;
         const std::string member = message.member();
         const std::string objectPath = message.path();
         const Variant::Items& args = message.arguments();
@@ -372,7 +372,7 @@ private:
     void appendPath(const std::string& owner, const std::string& interface, const std::string& name,
                     const std::string& objectPath, bool announce)
     {
-        std::vector<std::string> list = cutefish::networkmanager::variants::toStringList(objects[owner][interface][name]);
+        std::vector<std::string> list = properdesktop::networkmanager::variants::toStringList(objects[owner][interface][name]);
         list.push_back(objectPath);
         if (announce)
             set(owner, interface, name, paths(list));
@@ -383,7 +383,7 @@ private:
     void removePath(const std::string& owner, const std::string& interface, const std::string& name,
                     const std::string& objectPath)
     {
-        std::vector<std::string> list = cutefish::networkmanager::variants::toStringList(objects[owner][interface][name]);
+        std::vector<std::string> list = properdesktop::networkmanager::variants::toStringList(objects[owner][interface][name]);
         if (std::erase(list, objectPath))
             set(owner, interface, name, paths(list));
     }

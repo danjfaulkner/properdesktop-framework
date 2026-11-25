@@ -8,9 +8,9 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
-// The night light cutefish-services keeps. Its state is read once, without
+// The night light properdesktop-services keeps. Its state is read once, without
 // blocking, and then follows the service's change signals; a setter shows its
 // value at once and the service's answer settles it.
 class NightLight
@@ -83,4 +83,4 @@ private:
     int m_sunrise = 6 * 60;
 };
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

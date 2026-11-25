@@ -9,7 +9,7 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::timedate {
+namespace properdesktop::timedate {
 
 // The system clock's settings as org.freedesktop.timedate1 keeps them: the
 // time zone and network time. Read when made, so the first frame can show
@@ -53,4 +53,4 @@ private:
     bool m_available = false;
 };
 
-} // namespace cutefish::timedate
+} // namespace properdesktop::timedate

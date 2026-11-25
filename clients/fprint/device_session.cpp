@@ -7,9 +7,9 @@
 
 #include "base/event_loop.h"
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 Failure failureFromError(const dbus::Error& error)
 {
@@ -35,4 +35,4 @@ void releaseDevice(const dbus::Proxy& device, bool enrolling)
     });
 }
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

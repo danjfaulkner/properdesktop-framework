@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/timedate/time_date.h"
+#include "properdesktop/timedate/time_date.h"
 
 #include <chrono>
 #include <cstdio>
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::timedate {
+namespace properdesktop::timedate {
 
 static constexpr const char* kService = "org.freedesktop.timedate1";
 static constexpr const char* kPath = "/org/freedesktop/timedate1";
@@ -96,4 +96,4 @@ void TimeDate::setTimezone(const std::string& timezone, std::function<void(const
     }, timezone, true);
 }
 
-} // namespace cutefish::timedate
+} // namespace properdesktop::timedate

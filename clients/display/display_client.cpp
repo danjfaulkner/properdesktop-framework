@@ -5,10 +5,10 @@
 // Upstream: chromium/src/ash/display/cros_display_config.cc
 // Revision: 7acd40ddefff49c9d36144999aafdbb674dbd07a
 //
-// Adapted for Cutefish: asynchronous D-Bus calls, service-owner watching and
+// Adapted for Proper Desktop: asynchronous D-Bus calls, service-owner watching and
 // reconnecting after compositor restarts.
 
-#include "cutefish/display/display_client.h"
+#include "properdesktop/display/display_client.h"
 
 #include <algorithm>
 #include <chrono>
@@ -16,14 +16,14 @@
 
 #include "framework_i18n.h"
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 using namespace std::chrono_literals;
-using cutefish::framework::tr;
+using properdesktop::framework::tr;
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
-static constexpr const char* kPath = "/org/cutefish/DisplayConfig1";
-static constexpr const char* kInterface = "org.cutefish.DisplayConfig1";
+static constexpr const char* kPath = "/org/properdesktop/DisplayConfig1";
+static constexpr const char* kInterface = "org.properdesktop.DisplayConfig1";
 
 DisplayClient::DisplayClient(std::string serviceName)
     : m_serviceName(std::move(serviceName))
@@ -313,4 +313,4 @@ void DisplayClient::failRequests()
         done(false, ErrorCode::Unavailable);
 }
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

@@ -14,13 +14,13 @@
 #include <vector>
 
 #include "base/event_loop.h"
-#include "cutefish/packagekit/installer.h"
-#include "cutefish/packagekit/updates.h"
+#include "properdesktop/packagekit/installer.h"
+#include "properdesktop/packagekit/updates.h"
 
-using namespace cutefish;
-using namespace cutefish::base;
-using namespace cutefish::base::dbus;
-using namespace cutefish::packagekit;
+using namespace properdesktop;
+using namespace properdesktop::base;
+using namespace properdesktop::base::dbus;
+using namespace properdesktop::packagekit;
 using namespace std::chrono_literals;
 
 namespace {

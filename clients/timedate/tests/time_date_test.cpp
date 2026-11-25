@@ -9,11 +9,11 @@
 #include <thread>
 
 #include "base/event_loop.h"
-#include "cutefish/timedate/time_date.h"
+#include "properdesktop/timedate/time_date.h"
 
-using namespace cutefish;
-using namespace cutefish::base;
-using namespace cutefish::base::dbus;
+using namespace properdesktop;
+using namespace properdesktop::base;
+using namespace properdesktop::base::dbus;
 using namespace std::chrono_literals;
 
 namespace {

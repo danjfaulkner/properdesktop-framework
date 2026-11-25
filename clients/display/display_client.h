@@ -5,7 +5,7 @@
 // Upstream: chromium/src/ash/display/cros_display_config.h
 // Revision: 7acd40ddefff49c9d36144999aafdbb674dbd07a
 //
-// Adapted for Cutefish: an asynchronous D-Bus client watches compositor
+// Adapted for Proper Desktop: an asynchronous D-Bus client watches compositor
 // ownership and exposes coherent native display snapshots.
 
 #pragma once
@@ -20,9 +20,9 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 #include "base/timer.h"
-#include "cutefish/display/display_types.h"
+#include "properdesktop/display/display_types.h"
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
 class DisplayClient
 {
@@ -54,7 +54,7 @@ public:
     using Completion = std::function<void(bool succeeded, ErrorCode error)>;
 
     // Tests name a service of their own.
-    explicit DisplayClient(std::string serviceName = "org.cutefish.DisplayConfig");
+    explicit DisplayClient(std::string serviceName = "org.properdesktop.DisplayConfig");
     ~DisplayClient();
 
     DisplayClient(const DisplayClient&) = delete;
@@ -143,4 +143,4 @@ private:
     std::map<std::string, OperationResult> m_earlyRequestResults;
 };
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

@@ -13,7 +13,7 @@
 // Reads NetworkManager's values the way its properties are documented, not
 // strictly by their D-Bus type: a missing or mistyped value reads as empty or
 // zero, as a property NetworkManager leaves out stands for its default.
-namespace cutefish::networkmanager::variants {
+namespace properdesktop::networkmanager::variants {
 
 using base::dbus::Variant;
 using base::dbus::VariantMap;
@@ -54,4 +54,4 @@ Variant stringListValue(const std::vector<std::string>& strings);
 const Variant& value(const VariantMap& map, const std::string& key);
 bool contains(const VariantMap& map, const std::string& key);
 
-} // namespace cutefish::networkmanager::variants
+} // namespace properdesktop::networkmanager::variants

@@ -12,7 +12,7 @@
 
 #include "base/geometry.h"
 
-namespace cutefish::pdf {
+namespace properdesktop::pdf {
 
 // Positions and sizes are in PDF points (1/72 inch) on the page as it is
 // shown, its /Rotate applied, with the origin at its top left.
@@ -142,4 +142,4 @@ private:
     std::unique_ptr<Private> d;
 };
 
-} // namespace cutefish::pdf
+} // namespace properdesktop::pdf

@@ -3,11 +3,11 @@
 
 #include <gtest/gtest.h>
 
-#include "cutefish/networkmanager/types.h"
-#include "cutefish/networkmanager/vpn_schema.h"
+#include "properdesktop/networkmanager/types.h"
+#include "properdesktop/networkmanager/vpn_schema.h"
 
-using namespace cutefish::networkmanager;
-namespace schema = cutefish::networkmanager::vpn::schema;
+using namespace properdesktop::networkmanager;
+namespace schema = properdesktop::networkmanager::vpn::schema;
 using Strings = std::map<std::string, std::string>;
 
 static schema::FormField formItem(const std::string& kind, const Strings& data, const std::string& key)

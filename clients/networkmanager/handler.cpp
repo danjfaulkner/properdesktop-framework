@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/handler.h"
-#include "cutefish/networkmanager/client.h"
-#include "cutefish/networkmanager/hotspot.h"
-#include "cutefish/networkmanager/secret_reader.h"
-#include "cutefish/networkmanager/text.h"
-#include "cutefish/networkmanager/variants.h"
-#include "cutefish/networkmanager/wifi_utils.h"
+#include "properdesktop/networkmanager/handler.h"
+#include "properdesktop/networkmanager/client.h"
+#include "properdesktop/networkmanager/hotspot.h"
+#include "properdesktop/networkmanager/secret_reader.h"
+#include "properdesktop/networkmanager/text.h"
+#include "properdesktop/networkmanager/variants.h"
+#include "properdesktop/networkmanager/wifi_utils.h"
 
 #include <algorithm>
 #include <cstdio>
@@ -19,19 +19,19 @@
 #include "base/process.h"
 #include "framework_i18n.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 using namespace std::chrono_literals;
 using base::dbus::Reply;
 using base::dbus::Variant;
 using base::dbus::VariantMap;
 using namespace variants;
-using cutefish::framework::tr;
+using properdesktop::framework::tr;
 
 // The shell's secret agent, which asks for a new network's password up front.
-static const std::string promptService = "org.cutefish.SecretAgent";
+static const std::string promptService = "org.properdesktop.SecretAgent";
 static const std::string promptPath = "/SecretAgent";
-static const std::string promptInterface = "org.cutefish.SecretAgent";
+static const std::string promptInterface = "org.properdesktop.SecretAgent";
 
 static const std::string wirelessSecurity = "802-11-wireless-security";
 
@@ -1112,4 +1112,4 @@ void Handler::update()
     }
 }
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

@@ -10,13 +10,13 @@
 #include <thread>
 
 #include "base/event_loop.h"
-#include "cutefish/accounts/accounts_manager.h"
-#include "cutefish/accounts/user_account.h"
+#include "properdesktop/accounts/accounts_manager.h"
+#include "properdesktop/accounts/user_account.h"
 
-using namespace cutefish;
-using namespace cutefish::accounts;
-using namespace cutefish::base;
-using namespace cutefish::base::dbus;
+using namespace properdesktop;
+using namespace properdesktop::accounts;
+using namespace properdesktop::base;
+using namespace properdesktop::base::dbus;
 using namespace std::chrono_literals;
 
 namespace {

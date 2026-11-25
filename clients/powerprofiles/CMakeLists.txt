@@ -1,4 +1,4 @@
-cutefish_add_client(powerprofiles TARGET PowerProfilesClient
+properdesktop_add_client(powerprofiles TARGET PowerProfilesClient
     SOURCES power_profiles.cpp
     HEADERS power_profiles.h
 )

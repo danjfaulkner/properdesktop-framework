@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/accounts/account_picture.h"
+#include "properdesktop/accounts/account_picture.h"
 
 #include <algorithm>
 #include <array>
@@ -10,7 +10,7 @@
 
 namespace fs = std::filesystem;
 
-namespace cutefish::accounts {
+namespace properdesktop::accounts {
 
 // Muted tones taken from the preset pictures.
 static constexpr std::array<uint32_t, 8> kPictureColors{
@@ -57,4 +57,4 @@ uint32_t pictureColor(const std::string& userName)
     return kPictureColors[hash % kPictureColors.size()];
 }
 
-} // namespace cutefish::accounts
+} // namespace properdesktop::accounts

@@ -14,11 +14,11 @@
 #include "base/dbus.h"
 #include "base/event_loop.h"
 #include "base/timer.h"
-#include "cutefish/networkmanager/secret_reader.h"
+#include "properdesktop/networkmanager/secret_reader.h"
 
 using namespace std::chrono_literals;
-using namespace cutefish::base;
-using cutefish::networkmanager::SecretReader;
+using namespace properdesktop::base;
+using properdesktop::networkmanager::SecretReader;
 
 using Paths = std::vector<dbus::ObjectPath>;
 

@@ -11,7 +11,7 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::bluez {
+namespace properdesktop::bluez {
 
 class Manager;
 
@@ -109,4 +109,4 @@ private:
     std::string m_firmwareRevision;
 };
 
-} // namespace cutefish::bluez
+} // namespace properdesktop::bluez

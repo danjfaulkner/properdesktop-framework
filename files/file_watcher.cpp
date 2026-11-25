@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/file_watcher.h"
+#include "properdesktop/files/file_watcher.h"
 
 #include <algorithm>
 #include <fcntl.h>
@@ -13,11 +13,11 @@
 #include "framework_i18n.h"
 #include "path_utils_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
-using namespace cutefish::base;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using namespace properdesktop::base;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
 FileWatcher::FileWatcher(EventLoop* loop)
     : m_loop(loop ? loop : EventLoop::current())
@@ -126,4 +126,4 @@ bool FileWatcher::watch(const std::vector<std::string>& paths, const Entries& en
     return m_valid;
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

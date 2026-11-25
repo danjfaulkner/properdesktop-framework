@@ -2,17 +2,17 @@
 # file watching and UDisks2 volumes, on the toolkit's base library alone.
 # FilesThumbnails adds the freedesktop thumbnail cache and external
 # thumbnailers, which decode through the toolkit's UI library.
-#   find_package(CutefishFiles REQUIRED)
-#   target_link_libraries(app PRIVATE Cutefish::Files Cutefish::FilesThumbnails)
+#   find_package(ProperDesktopFiles REQUIRED)
+#   target_link_libraries(app PRIVATE ProperDesktop::Files ProperDesktop::FilesThumbnails)
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    message(FATAL_ERROR "Cutefish Files requires Linux")
+    message(FATAL_ERROR "Proper Desktop Files requires Linux")
 endif()
 
 set(CMAKE_AUTOMOC OFF)
 set(CMAKE_AUTORCC OFF)
 
-find_package(CutefishToolkit REQUIRED)
+find_package(ProperDesktopToolkit REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(Threads REQUIRED)
 # Unicode case folding for name search and MIME glob matching, as the toolkit
@@ -40,10 +40,10 @@ set(FILES_PUBLIC_HEADERS
     volume_manager.h
 )
 
-cutefish_framework_add_library(cutefish-files
+properdesktop_framework_add_library(properdesktop-files
     TARGET Files
     MODULE files
-    EXPORT CutefishFilesTargets
+    EXPORT ProperDesktopFilesTargets
     SOURCES
         applications_folder.cpp
         applications_folder_p.h
@@ -72,15 +72,15 @@ cutefish_framework_add_library(cutefish-files
         url.cpp
         volume_manager.cpp
     HEADERS ${FILES_PUBLIC_HEADERS}
-    PUBLIC_LIBRARIES Cutefish::ToolkitBase Threads::Threads
+    PUBLIC_LIBRARIES ProperDesktop::ToolkitBase Threads::Threads
     PRIVATE_LIBRARIES PkgConfig::FilesIcu
 )
-target_compile_definitions(cutefish-files PRIVATE _FILE_OFFSET_BITS=64)
+target_compile_definitions(properdesktop-files PRIVATE _FILE_OFFSET_BITS=64)
 
-cutefish_framework_add_library(cutefish-files-thumbnails
+properdesktop_framework_add_library(properdesktop-files-thumbnails
     TARGET FilesThumbnails
     MODULE files
-    EXPORT CutefishFilesTargets
+    EXPORT ProperDesktopFilesTargets
     SOURCES
         thumbnails/md5_p.cpp
         thumbnails/md5_p.h
@@ -88,7 +88,7 @@ cutefish_framework_add_library(cutefish-files-thumbnails
         thumbnails/thumbnailers.cpp
         thumbnails/thumbnailers_p.h
     HEADERS thumbnails/thumbnail_cache.h
-    PUBLIC_LIBRARIES Cutefish::Files Cutefish::Toolkit
+    PUBLIC_LIBRARIES ProperDesktop::Files ProperDesktop::Toolkit
     PRIVATE_LIBRARIES PkgConfig::FilesPng
 )
 
@@ -96,5 +96,5 @@ if(BUILD_TESTING)
     add_subdirectory(tests)
 endif()
 
-cutefish_framework_export(CutefishFiles CutefishFilesTargets)
-cutefish_framework_add_package(CutefishFiles)
+properdesktop_framework_export(ProperDesktopFiles ProperDesktopFilesTargets)
+properdesktop_framework_add_package(ProperDesktopFiles)

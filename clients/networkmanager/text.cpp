@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/text.h"
+#include "properdesktop/networkmanager/text.h"
 
 #include <algorithm>
 #include <cctype>
 #include <cstdio>
 #include <sys/random.h>
 
-namespace cutefish::networkmanager::text {
+namespace properdesktop::networkmanager::text {
 
 static bool isSpace(char c)
 {
@@ -107,4 +107,4 @@ std::string newUuid()
     return text;
 }
 
-} // namespace cutefish::networkmanager::text
+} // namespace properdesktop::networkmanager::text

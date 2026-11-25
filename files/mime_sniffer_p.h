@@ -10,7 +10,7 @@
 
 #include "base/elapsed_timer.h"
 
-namespace cutefish::files::internal {
+namespace properdesktop::files::internal {
 
 /**
  * The MIME type of a file on disk from its name and contents, matched
@@ -50,4 +50,4 @@ std::string userDataDirectory();
 // restores the default.
 void setUserDataDirectory(const std::string& path);
 
-} // namespace cutefish::files::internal
+} // namespace properdesktop::files::internal

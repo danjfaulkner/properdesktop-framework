@@ -8,9 +8,9 @@
 
 #include "base/signal.h"
 #include "base/weak_ptr.h"
-#include "cutefish/files/directory_lister.h"
+#include "properdesktop/files/directory_lister.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // The rows of a lister's listing, kept in step with it by the smallest changes:
 // rows of unchanged files stay where they are, so a view keeps its selection
@@ -77,4 +77,4 @@ private:
     base::WeakPtrFactory<DirectoryModel> m_weakFactory{this};
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

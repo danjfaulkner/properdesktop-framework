@@ -7,12 +7,12 @@
 #include <gtest/gtest.h>
 #include <unistd.h>
 
-#include "cutefish/networkmanager/variants.h"
-#include "cutefish/networkmanager/vpn_utils.h"
+#include "properdesktop/networkmanager/variants.h"
+#include "properdesktop/networkmanager/vpn_utils.h"
 
-using namespace cutefish::networkmanager;
-using namespace cutefish::networkmanager::variants;
-using cutefish::base::dbus::VariantMap;
+using namespace properdesktop::networkmanager;
+using namespace properdesktop::networkmanager::variants;
+using properdesktop::base::dbus::VariantMap;
 
 static const std::string openvpn = "org.freedesktop.NetworkManager.openvpn";
 

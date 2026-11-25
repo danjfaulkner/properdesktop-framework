@@ -5,9 +5,9 @@
 
 #include <string>
 
-#include "cutefish/files/url.h"
+#include "properdesktop/files/url.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // A URL the local file system serves: file:// paths, and trash:/, which lists
 // every trash. trash:/<id>/<name> is an item at the top of one: id is "home"
@@ -28,4 +28,4 @@ private:
     Url m_url;
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

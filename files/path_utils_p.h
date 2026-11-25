@@ -13,7 +13,7 @@
 #include <vector>
 
 // Path text handling on bytes.
-namespace cutefish::files::internal {
+namespace properdesktop::files::internal {
 
 // The path with no repeated slashes, "." or "..", nor a trailing slash.
 inline std::string cleanPath(std::string_view path)
@@ -119,4 +119,4 @@ inline bool makePath(const std::string& path)
     return ::stat(clean.c_str(), &st) == 0 && S_ISDIR(st.st_mode);
 }
 
-} // namespace cutefish::files::internal
+} // namespace properdesktop::files::internal

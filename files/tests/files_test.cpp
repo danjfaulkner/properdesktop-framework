@@ -27,24 +27,24 @@
 #include "base/locale.h"
 #include "base/paths.h"
 #include "base/strings.h"
-#include "cutefish/files/directory_lister.h"
-#include "cutefish/files/directory_model.h"
-#include "cutefish/files/file_enumerator.h"
-#include "cutefish/files/file_path.h"
-#include "cutefish/files/file_watcher.h"
-#include "cutefish/files/local_file_system.h"
-#include "cutefish/files/applications_folder_p.h"
-#include "cutefish/files/mime_sniffer_p.h"
-#include "cutefish/files/mime_types.h"
-#include "cutefish/files/path_utils_p.h"
-#include "cutefish/files/task.h"
-#include "cutefish/files/trash_directory_p.h"
-#include "cutefish/files/trash_monitor.h"
+#include "properdesktop/files/directory_lister.h"
+#include "properdesktop/files/directory_model.h"
+#include "properdesktop/files/file_enumerator.h"
+#include "properdesktop/files/file_path.h"
+#include "properdesktop/files/file_watcher.h"
+#include "properdesktop/files/local_file_system.h"
+#include "properdesktop/files/applications_folder_p.h"
+#include "properdesktop/files/mime_sniffer_p.h"
+#include "properdesktop/files/mime_types.h"
+#include "properdesktop/files/path_utils_p.h"
+#include "properdesktop/files/task.h"
+#include "properdesktop/files/trash_directory_p.h"
+#include "properdesktop/files/trash_monitor.h"
 #include "testing.h"
 
-using namespace cutefish;
-using namespace cutefish::files;
-using namespace cutefish::files::testing;
+using namespace properdesktop;
+using namespace properdesktop::files;
+using namespace properdesktop::files::testing;
 
 static Url local(const std::string& path)
 {
@@ -351,7 +351,7 @@ TEST_F(FilesTest, Conflicts)
     EXPECT_EQ(readFile(target), "new");
 
     for (const std::string& name : entries(dir.path()))
-        EXPECT_FALSE(name.starts_with(".cutefish-")) << name;
+        EXPECT_FALSE(name.starts_with(".properdesktop-")) << name;
 }
 
 TEST_F(FilesTest, DirectoryConflictPreservesDestination)
@@ -475,7 +475,7 @@ TEST_F(FilesTest, ReplacingAFolderThatHoldsTheSourceIsRefused)
     EXPECT_EQ(readFile(dir.filePath("b (1)/b/inner")), "inner");
 
     for (const std::string& name : entries(dir.path()))
-        EXPECT_FALSE(name.starts_with(".cutefish-")) << name;
+        EXPECT_FALSE(name.starts_with(".properdesktop-")) << name;
 }
 
 TEST_F(FilesTest, DestinationSymlinkIsNotFollowed)
@@ -513,7 +513,7 @@ TEST_F(FilesTest, CancellationCleansStaging)
     EXPECT_EQ(readFile(dir.filePath("target")), "original");
     EXPECT_EQ(fileSize(dir.filePath("source")), 8 * 1024 * 1024);
     for (const std::string& name : entries(dir.path()))
-        EXPECT_FALSE(name.starts_with(".cutefish-")) << name;
+        EXPECT_FALSE(name.starts_with(".properdesktop-")) << name;
 }
 
 TEST_F(FilesTest, CancelBeforeMutation)
@@ -1994,7 +1994,7 @@ TEST_F(FilesTest, AdministratorFolderAsksBeforeTheHelper)
     ASSERT_TRUE(makePath(dir.filePath("Shared")));
     writeFile(dir.filePath("source"), "new");
     ASSERT_EQ(::chmod(dir.filePath("Shared").c_str(), 0555), 0);
-    cutefish::files::internal::applications_folder::setFolder(
+    properdesktop::files::internal::applications_folder::setFolder(
             std::filesystem::canonical(dir.filePath("Shared")).string());
 
     Task task({Operation::Copy, {local(dir.filePath("source"))}, local(dir.filePath("Shared")), ConflictPolicy::Ask});
@@ -2013,7 +2013,7 @@ TEST_F(FilesTest, AdministratorFolderAsksBeforeTheHelper)
     EXPECT_FALSE(std::filesystem::exists(dir.filePath("Shared/source")));
 
     ::chmod(dir.filePath("Shared").c_str(), 0755);
-    cutefish::files::internal::applications_folder::setFolder("/Applications");
+    properdesktop::files::internal::applications_folder::setFolder("/Applications");
 }
 
 TEST_F(FilesTest, ControllerTrashUndo)
@@ -2445,7 +2445,7 @@ TEST_F(FilesTest, LinkDoesNotReplaceWhatItPointsTo)
     EXPECT_FALSE(isSymbolicLink(dir.filePath("real/file")));
     EXPECT_EQ(readFile(dir.filePath("real/file")), "data");
     for (const std::string& name : entries(dir.filePath("real")))
-        EXPECT_FALSE(name.starts_with(".cutefish-")) << name;
+        EXPECT_FALSE(name.starts_with(".properdesktop-")) << name;
 }
 
 TEST_F(FilesTest, TypeDescriptionsAndIcons)

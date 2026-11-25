@@ -9,9 +9,9 @@
 #include <pipewire/pipewire.h>
 
 #include "base/signal.h"
-#include "cutefish/audio/audio_object.h"
+#include "properdesktop/audio/audio_object.h"
 
-namespace cutefish::audio {
+namespace properdesktop::audio {
 
 class Backend;
 
@@ -52,4 +52,4 @@ private:
     std::vector<base::Subscription> m_subscriptions;
 };
 
-} // namespace cutefish::audio
+} // namespace properdesktop::audio

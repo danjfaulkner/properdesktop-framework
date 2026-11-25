@@ -8,7 +8,7 @@
 #include <vector>
 
 // String helpers the client's parsers and forms share.
-namespace cutefish::networkmanager::text {
+namespace properdesktop::networkmanager::text {
 
 std::string trimmed(std::string_view text);
 std::string lower(std::string_view text);
@@ -23,4 +23,4 @@ std::string arg(std::string_view pattern, const std::vector<std::string>& values
 // A random version 4 UUID, as NetworkManager's profiles carry.
 std::string newUuid();
 
-} // namespace cutefish::networkmanager::text
+} // namespace properdesktop::networkmanager::text

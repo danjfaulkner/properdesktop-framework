@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/directory_lister.h"
+#include "properdesktop/files/directory_lister.h"
 
 #include <atomic>
 #include <chrono>
@@ -10,19 +10,19 @@
 
 #include "async_p.h"
 #include "base/strings.h"
-#include "cutefish/files/file_enumerator.h"
-#include "cutefish/files/file_system_url.h"
+#include "properdesktop/files/file_enumerator.h"
+#include "properdesktop/files/file_system_url.h"
 #include "framework_i18n.h"
 #include "mime_sniffer_p.h"
 #include "path_utils_p.h"
 #include "trash_directory_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 using namespace std::chrono_literals;
-using namespace cutefish::base;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using namespace properdesktop::base;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
 namespace {
 
@@ -455,4 +455,4 @@ void DirectoryLister::refresh()
     started.emit();
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

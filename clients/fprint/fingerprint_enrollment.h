@@ -7,9 +7,9 @@
 
 #include "base/dbus.h"
 #include "base/signal.h"
-#include "cutefish/fprint/fingerprint_finger.h"
+#include "properdesktop/fprint/fingerprint_finger.h"
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 // Why an action on the reader did not go through.
 enum class Failure {
@@ -100,4 +100,4 @@ private:
     bool m_enrolling = false;
 };
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

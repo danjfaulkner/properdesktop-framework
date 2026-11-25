@@ -1,21 +1,21 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/upower/battery_status.h"
+#include "properdesktop/upower/battery_status.h"
 
 #include <algorithm>
 #include <cmath>
 
 #include "base/event_loop.h"
-#include "cutefish/upower/device.h"
+#include "properdesktop/upower/device.h"
 
-using namespace cutefish::base::dbus;
+using namespace properdesktop::base::dbus;
 
-namespace cutefish::upower {
+namespace properdesktop::upower {
 
-static constexpr const char* kService = "org.cutefish.Services";
-static constexpr const char* kPath = "/org/cutefish/Services/Battery";
-static constexpr const char* kInterface = "org.cutefish.Services.Battery";
+static constexpr const char* kService = "org.properdesktop.Services";
+static constexpr const char* kPath = "/org/properdesktop/Services/Battery";
+static constexpr const char* kInterface = "org.properdesktop.Services.Battery";
 
 static constexpr const char* kUPowerService = "org.freedesktop.UPower";
 static constexpr const char* kUPowerPath = "/org/freedesktop/UPower";
@@ -184,4 +184,4 @@ void BatteryStatus::setOnBattery(bool onBattery)
     onBatteryChanged.emit();
 }
 
-} // namespace cutefish::upower
+} // namespace properdesktop::upower

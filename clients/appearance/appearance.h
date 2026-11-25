@@ -9,9 +9,9 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::appearance {
+namespace properdesktop::appearance {
 
-// The session's look, as org.cutefish.Services.Appearance keeps it: dark
+// The session's look, as org.properdesktop.Services.Appearance keeps it: dark
 // mode, accent colour, fonts, icon and cursor themes and the wallpaper. The
 // values are read when the service appears and kept up to date from its
 // signals; changes go to the service, which owns them, and show here once it
@@ -48,7 +48,7 @@ public:
     bool coloredWindowControls() const;
     void setColoredWindowControls(bool colored);
     // Where applications that draw their own window buttons (browsers and the like) put them;
-    // Cutefish's own applications keep theirs on the left.
+    // Proper Desktop's own applications keep theirs on the left.
     bool windowButtonsOnRight() const;
     void setWindowButtonsOnRight(bool onRight);
     // An index into the accent colours: blue, red, green, purple, pink,
@@ -109,4 +109,4 @@ private:
     bool m_available = false;
 };
 
-} // namespace cutefish::appearance
+} // namespace properdesktop::appearance

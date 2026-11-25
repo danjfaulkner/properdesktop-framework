@@ -5,7 +5,7 @@
 // Upstream: chromium/src/ash/display/cros_display_config.h
 // Revision: 7acd40ddefff49c9d36144999aafdbb674dbd07a
 //
-// Adapted for Cutefish: stable-ID draft rows expose native modes, layout,
+// Adapted for Proper Desktop: stable-ID draft rows expose native modes, layout,
 // primary selection, scale, rotation, and software mirror requests.
 
 #pragma once
@@ -15,9 +15,9 @@
 #include <vector>
 
 #include "base/signal.h"
-#include "cutefish/display/display_client.h"
+#include "properdesktop/display/display_client.h"
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
 // The displays as the user edits them: one row per physical display, kept
 // across state refreshes by its session id, and the requests that apply the
@@ -130,4 +130,4 @@ private:
     bool m_layoutDirty = false;
 };
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

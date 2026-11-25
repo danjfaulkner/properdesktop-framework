@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/volume_manager.h"
+#include "properdesktop/files/volume_manager.h"
 
 #include <algorithm>
 #include <chrono>
@@ -11,13 +11,13 @@
 #include "framework_i18n.h"
 #include "path_utils_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
-using namespace cutefish::base;
-using namespace cutefish::base::dbus;
+using namespace properdesktop::base;
+using namespace properdesktop::base::dbus;
 using namespace std::chrono_literals;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
 static const std::string service = "org.freedesktop.UDisks2";
 static const std::string root = "/org/freedesktop/UDisks2";
@@ -396,4 +396,4 @@ void VolumeManager::perform(const std::string& id, const std::string& operation,
         m_calls[callId] = proxy.callAsync(step.method, std::move(done), VariantMap());
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

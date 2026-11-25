@@ -7,9 +7,9 @@
 #include <string>
 #include <vector>
 
-#include "cutefish/display/output_model.h"
+#include "properdesktop/display/output_model.h"
 
-using namespace cutefish::display;
+using namespace properdesktop::display;
 
 // Displays side by side from x = 0, each its own logical display, display 0 primary.
 static DisplayClient::State extendedDisplays(int count)

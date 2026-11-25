@@ -11,13 +11,13 @@
 #include <utility>
 #include <vector>
 
-#include "cutefish/files/url.h"
+#include "properdesktop/files/url.h"
 
-namespace cutefish::base {
+namespace properdesktop::base {
 class Locale;
 }
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // A file or folder with what was read about it. Copies share their data until
 // one of them changes, so lists of thousands of items copy cheaply; one item
@@ -185,4 +185,4 @@ std::string standardFolderIconName(const std::string& path);
 bool isStandardFolder(const Url& url);
 bool canMoveStandardFolderTo(const Url& source, const Url& destination);
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

@@ -6,7 +6,7 @@
 #include <optional>
 #include <string_view>
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 // The ten fingers fprintd keeps a print for, in its order.
 enum class Finger {
@@ -28,4 +28,4 @@ inline constexpr int kFingerCount = 10;
 std::string_view fingerName(Finger finger);
 std::optional<Finger> fingerFromName(std::string_view name);
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

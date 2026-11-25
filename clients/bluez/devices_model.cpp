@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/bluez/devices_model.h"
+#include "properdesktop/bluez/devices_model.h"
 
 #include <algorithm>
 
 #include "base/locale.h"
-#include "cutefish/bluez/manager.h"
+#include "properdesktop/bluez/manager.h"
 
-namespace cutefish::bluez {
+namespace properdesktop::bluez {
 
 DevicesModel::DevicesModel(std::shared_ptr<Manager> manager)
 {
@@ -82,4 +82,4 @@ void DevicesModel::rebuild()
         dataChanged.emit();
 }
 
-} // namespace cutefish::bluez
+} // namespace properdesktop::bluez

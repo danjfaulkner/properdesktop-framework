@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/ip_utils.h"
-#include "cutefish/networkmanager/client.h"
-#include "cutefish/networkmanager/inet.h"
-#include "cutefish/networkmanager/text.h"
-#include "cutefish/networkmanager/variants.h"
-#include "cutefish/networkmanager/vpn_utils.h"
+#include "properdesktop/networkmanager/ip_utils.h"
+#include "properdesktop/networkmanager/client.h"
+#include "properdesktop/networkmanager/inet.h"
+#include "properdesktop/networkmanager/text.h"
+#include "properdesktop/networkmanager/variants.h"
+#include "properdesktop/networkmanager/vpn_utils.h"
 #include "framework_i18n.h"
 
 #include <algorithm>
@@ -16,13 +16,13 @@
 #include <cstring>
 #include <endian.h>
 
-namespace cutefish::networkmanager::ip {
+namespace properdesktop::networkmanager::ip {
 
 using base::dbus::Variant;
 using base::dbus::VariantMap;
 using namespace variants;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
 static const std::string ipv4Setting = "ipv4";
 static const std::string ipv6Setting = "ipv6";
@@ -406,4 +406,4 @@ std::optional<Settings> settings(const Form& form, const Settings& existing, boo
     return profile;
 }
 
-} // namespace cutefish::networkmanager::ip
+} // namespace properdesktop::networkmanager::ip

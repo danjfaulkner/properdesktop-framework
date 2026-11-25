@@ -6,9 +6,9 @@
 #include "base/signal.h"
 #include "base/thread_pool.h"
 #include "base/timer.h"
-#include "cutefish/files/file_watcher.h"
+#include "properdesktop/files/file_watcher.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // Whether anything is in the trash: the home trash or that of any mounted volume.
 class TrashMonitor
@@ -42,4 +42,4 @@ private:
     bool m_empty = true;
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

@@ -16,9 +16,9 @@
 #include "base/event_loop.h"
 #include "base/file.h"
 #include "base/timer.h"
-#include "cutefish/files/error.h"
+#include "properdesktop/files/error.h"
 
-namespace cutefish::files::testing {
+namespace properdesktop::files::testing {
 
 using namespace std::chrono_literals;
 
@@ -29,7 +29,7 @@ class TemporaryDirectory
 public:
     explicit TemporaryDirectory(const std::string& parent = "/tmp")
     {
-        std::string pattern = parent + "/cutefish-files-XXXXXX";
+        std::string pattern = parent + "/properdesktop-files-XXXXXX";
         if (::mkdtemp(pattern.data()))
             m_path = pattern;
     }
@@ -179,4 +179,4 @@ bool waitFor(base::EventLoop& loop, Condition condition, std::chrono::millisecon
     return true;
 }
 
-} // namespace cutefish::files::testing
+} // namespace properdesktop::files::testing

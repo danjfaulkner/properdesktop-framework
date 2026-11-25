@@ -16,19 +16,19 @@
 
 #include "base/event_loop.h"
 #include "base/timer.h"
-#include "cutefish/networkmanager/client.h"
-#include "cutefish/networkmanager/connections.h"
-#include "cutefish/networkmanager/handler.h"
-#include "cutefish/networkmanager/hotspot.h"
-#include "cutefish/networkmanager/network_model.h"
-#include "cutefish/networkmanager/vpn_utils.h"
+#include "properdesktop/networkmanager/client.h"
+#include "properdesktop/networkmanager/connections.h"
+#include "properdesktop/networkmanager/handler.h"
+#include "properdesktop/networkmanager/hotspot.h"
+#include "properdesktop/networkmanager/network_model.h"
+#include "properdesktop/networkmanager/vpn_utils.h"
 #include "fake_network_manager.h"
 
 using namespace std::chrono_literals;
-using namespace cutefish::networkmanager;
-using namespace cutefish::networkmanager::variants;
-using cutefish::base::EventLoop;
-using cutefish::base::Timer;
+using namespace properdesktop::networkmanager;
+using namespace properdesktop::networkmanager::variants;
+using properdesktop::base::EventLoop;
+using properdesktop::base::Timer;
 using fakenm::FakeNetworkManager;
 
 static EventLoop* loop = nullptr;
@@ -85,8 +85,8 @@ static constexpr uint32_t rsnEap = 0x8 | 0x80 | 0x200;
 // WEP40, WEP104, TKIP, CCMP, WPA, RSN and AP.
 static constexpr uint32_t wifiCapabilities = 0x1 | 0x2 | 0x4 | 0x8 | 0x10 | 0x20 | 0x40;
 
-using Variant = cutefish::base::dbus::Variant;
-using VariantMap = cutefish::base::dbus::VariantMap;
+using Variant = properdesktop::base::dbus::Variant;
+using VariantMap = properdesktop::base::dbus::VariantMap;
 
 static Variant addressData(const std::string& address)
 {
@@ -218,8 +218,8 @@ struct ClientTest : testing::Test
 {
     void SetUp() override
     {
-        server = cutefish::base::dbus::Connection::open(cutefish::base::dbus::Connection::Bus::Session);
-        clientBus = cutefish::base::dbus::Connection::open(cutefish::base::dbus::Connection::Bus::Session);
+        server = properdesktop::base::dbus::Connection::open(properdesktop::base::dbus::Connection::Bus::Session);
+        clientBus = properdesktop::base::dbus::Connection::open(properdesktop::base::dbus::Connection::Bus::Session);
         ASSERT_TRUE(server && clientBus);
         nm = std::make_unique<FakeNetworkManager>(server.get());
         populate(*nm);
@@ -301,8 +301,8 @@ struct ClientTest : testing::Test
         nm->add(path, {{fakenm::connection, {{"Flags", Variant(uint32_t(0))}}}});
     }
 
-    std::unique_ptr<cutefish::base::dbus::Connection> server;
-    std::unique_ptr<cutefish::base::dbus::Connection> clientBus;
+    std::unique_ptr<properdesktop::base::dbus::Connection> server;
+    std::unique_ptr<properdesktop::base::dbus::Connection> clientBus;
     std::unique_ptr<FakeNetworkManager> nm;
 };
 

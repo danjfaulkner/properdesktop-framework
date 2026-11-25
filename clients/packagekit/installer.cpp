@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/packagekit/installer.h"
+#include "properdesktop/packagekit/installer.h"
 
 #include <algorithm>
 #include <vector>
 
-using namespace cutefish::base::dbus;
+using namespace properdesktop::base::dbus;
 
-namespace cutefish::packagekit {
+namespace properdesktop::packagekit {
 
 // PackageKit's bitfields hold 1 << the enum value: PK_FILTER_ENUM_NONE and
 // PK_TRANSACTION_FLAG_ENUM_ONLY_TRUSTED.
@@ -183,4 +183,4 @@ void Installer::fail(const std::string& error)
     setState(State::Error);
 }
 
-} // namespace cutefish::packagekit
+} // namespace properdesktop::packagekit

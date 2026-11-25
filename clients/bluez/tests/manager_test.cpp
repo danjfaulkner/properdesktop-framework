@@ -10,12 +10,12 @@
 #include <optional>
 
 #include "base/timer.h"
-#include "cutefish/bluez/devices_model.h"
-#include "cutefish/bluez/manager.h"
+#include "properdesktop/bluez/devices_model.h"
+#include "properdesktop/bluez/manager.h"
 #include "fake_bluez.h"
 
-using namespace cutefish::base;
-using namespace cutefish::bluez;
+using namespace properdesktop::base;
+using namespace properdesktop::bluez;
 using namespace fake;
 using namespace std::chrono_literals;
 

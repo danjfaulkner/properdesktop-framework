@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/fprint/fingerprint_finger.h"
+#include "properdesktop/fprint/fingerprint_finger.h"
 
 #include <array>
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 static constexpr std::array<std::string_view, kFingerCount> kNames = {
     "left-thumb",   "left-index-finger",  "left-middle-finger",  "left-ring-finger",  "left-little-finger",
@@ -26,4 +26,4 @@ std::optional<Finger> fingerFromName(std::string_view name)
     return std::nullopt;
 }
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

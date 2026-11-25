@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/vpn_utils.h"
-#include "cutefish/networkmanager/client.h"
-#include "cutefish/networkmanager/inet.h"
-#include "cutefish/networkmanager/text.h"
-#include "cutefish/networkmanager/variants.h"
-#include "cutefish/networkmanager/vpn_schema.h"
+#include "properdesktop/networkmanager/vpn_utils.h"
+#include "properdesktop/networkmanager/client.h"
+#include "properdesktop/networkmanager/inet.h"
+#include "properdesktop/networkmanager/text.h"
+#include "properdesktop/networkmanager/variants.h"
+#include "properdesktop/networkmanager/vpn_schema.h"
 #include "framework_i18n.h"
 
 #include <algorithm>
@@ -17,13 +17,13 @@
 #include <fstream>
 #include <sstream>
 
-namespace cutefish::networkmanager::vpn {
+namespace properdesktop::networkmanager::vpn {
 
 using base::dbus::Variant;
 using base::dbus::VariantMap;
 using namespace variants;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
 static const std::string servicePrefix = "org.freedesktop.NetworkManager.";
 
@@ -100,7 +100,7 @@ static Plugin readNameFile(const std::filesystem::path& path)
 // Read again only when a directory changed: plugins come and go with packages.
 static const std::vector<Plugin>& plugins()
 {
-    PluginCache& cache = ::cutefish::networkmanager::vpn::cache();
+    PluginCache& cache = ::properdesktop::networkmanager::vpn::cache();
     std::vector<std::filesystem::file_time_type> stamps;
     for (const std::string& directory : cache.directories) {
         std::error_code error;
@@ -805,4 +805,4 @@ std::string wireGuardConfig(const Settings& settings)
     return out;
 }
 
-} // namespace cutefish::networkmanager::vpn
+} // namespace properdesktop::networkmanager::vpn

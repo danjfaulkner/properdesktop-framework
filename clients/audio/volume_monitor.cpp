@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/audio/volume_monitor.h"
+#include "properdesktop/audio/volume_monitor.h"
 
 #include <algorithm>
 #include <cmath>
@@ -9,9 +9,9 @@
 
 #include <spa/param/audio/format-utils.h>
 
-#include "cutefish/audio/backend.h"
+#include "properdesktop/audio/backend.h"
 
-namespace cutefish::audio {
+namespace properdesktop::audio {
 
 const pw_stream_events VolumeMonitor::streamEvents = [] {
     pw_stream_events events{};
@@ -59,11 +59,11 @@ void VolumeMonitor::setTarget(const std::shared_ptr<AudioObject>& target)
     // A passive link never wakes its peer: right for a sink, which plays anyway,
     // but a microphone nobody else records from would stay suspended.
     auto* properties = pw_properties_new(PW_KEY_MEDIA_TYPE, "Audio", PW_KEY_MEDIA_CATEGORY, "Capture",
-                                         PW_KEY_NODE_NAME, "cutefish.internal.monitor", PW_KEY_MEDIA_ROLE, "DSP",
+                                         PW_KEY_NODE_NAME, "properdesktop.internal.monitor", PW_KEY_MEDIA_ROLE, "DSP",
                                          PW_KEY_TARGET_OBJECT, serial.c_str(), "stream.capture.sink",
                                          sink ? "true" : "false", "node.passive", sink ? "true" : "false",
                                          "node.dont-fallback", "true", "node.linger", "true", nullptr);
-    m_stream = pw_stream_new(m_backend->core(), "Cutefish volume monitor", properties);
+    m_stream = pw_stream_new(m_backend->core(), "Proper Desktop volume monitor", properties);
     if (!m_stream)
         return;
     pw_stream_add_listener(m_stream, &m_listener, &streamEvents, this);
@@ -140,4 +140,4 @@ void VolumeMonitor::stop()
     updateVolume(0.0);
 }
 
-} // namespace cutefish::audio
+} // namespace properdesktop::audio

@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/thumbnails/thumbnail_cache.h"
+#include "properdesktop/files/thumbnails/thumbnail_cache.h"
 
 #include <algorithm>
 #include <array>
@@ -23,17 +23,17 @@
 #include "base/application_bundle.h"
 #include "base/paths.h"
 #include "base/strings.h"
-#include "cutefish/files/mime_types.h"
-#include "cutefish/files/url.h"
+#include "properdesktop/files/mime_types.h"
+#include "properdesktop/files/url.h"
 #include "md5_p.h"
 #include "thumbnailers_p.h"
 #include "ui/bitmap_painter.h"
 #include "ui/font_file.h"
 #include "../path_utils_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
 namespace {
 
@@ -403,7 +403,7 @@ static bool locate(const std::string& filePath, base::Size requestedSize, Entry*
     entry->size = int64_t(st.st_size);
     entry->directory = entry->root + '/' + flavor.name;
     entry->target = entry->directory + '/' + name;
-    entry->failDirectory = entry->root + "/fail/cutefish";
+    entry->failDirectory = entry->root + "/fail/properdesktop";
     entry->failTarget = entry->failDirectory + '/' + name;
     return true;
 }
@@ -556,4 +556,4 @@ ui::Bitmap ThumbnailCache::generateThumbnail(const std::string& source, base::Si
     return image;
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

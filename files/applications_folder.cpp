@@ -11,10 +11,10 @@
 
 #include "base/dbus.h"
 #include "base/event_loop.h"
-#include "cutefish/files/error.h"
+#include "properdesktop/files/error.h"
 #include "path_utils_p.h"
 
-namespace cutefish::files::internal::applications_folder {
+namespace properdesktop::files::internal::applications_folder {
 
 // An administrator may take a while to answer.
 static constexpr std::chrono::minutes kTimeout(10);
@@ -43,9 +43,9 @@ static base::dbus::Reply call(const std::string& method, const std::string& subj
             base::dbus::Connection::open(base::dbus::Connection::Bus::System, &loop);
     if (!bus)
         throw Failure(EACCES, subject);
-    base::dbus::Message message = bus->newMethodCall("org.cutefish.ApplicationsFolder",
-                                                     "/org/cutefish/ApplicationsFolder",
-                                                     "org.cutefish.ApplicationsFolder", method);
+    base::dbus::Message message = bus->newMethodCall("org.properdesktop.ApplicationsFolder",
+                                                     "/org/properdesktop/ApplicationsFolder",
+                                                     "org.properdesktop.ApplicationsFolder", method);
     arguments(message);
     base::dbus::Reply reply = bus->call(message, kTimeout);
     // A refused administrator cancels quietly, as no answer would.
@@ -102,4 +102,4 @@ void discard(const std::string& staging)
     call("discard", staging, [&](base::dbus::Message& message) { message.append(staging); });
 }
 
-} // namespace cutefish::files::internal::applications_folder
+} // namespace properdesktop::files::internal::applications_folder

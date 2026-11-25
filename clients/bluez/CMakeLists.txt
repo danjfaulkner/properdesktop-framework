@@ -1,4 +1,4 @@
-cutefish_add_client(bluez TARGET BluezClient
+properdesktop_add_client(bluez TARGET BluezClient
     SOURCES
         bluetooth_object.cpp
         devices_model.cpp

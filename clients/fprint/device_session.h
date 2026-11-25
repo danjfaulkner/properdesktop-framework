@@ -4,9 +4,9 @@
 #pragma once
 
 #include "base/dbus.h"
-#include "cutefish/fprint/fingerprint_enrollment.h"
+#include "properdesktop/fprint/fingerprint_enrollment.h"
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 inline constexpr const char* kService = "net.reactivated.Fprint";
 inline constexpr const char* kDeviceInterface = "net.reactivated.Fprint.Device";
@@ -19,4 +19,4 @@ Failure failureFromError(const base::dbus::Error& error);
 // release waits for the stop's answer. Goes on after the caller is gone.
 void releaseDevice(const base::dbus::Proxy& device, bool enrolling);
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

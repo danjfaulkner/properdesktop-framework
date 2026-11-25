@@ -9,7 +9,7 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::powerprofiles {
+namespace properdesktop::powerprofiles {
 
 // power-profiles-daemon's profiles, read asynchronously and kept up to date
 // from its PropertiesChanged, so the getters never block.
@@ -55,4 +55,4 @@ private:
     std::string m_performanceDegraded;
 };
 
-} // namespace cutefish::powerprofiles
+} // namespace properdesktop::powerprofiles

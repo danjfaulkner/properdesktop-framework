@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/bluez/manager.h"
+#include "properdesktop/bluez/manager.h"
 
 #include <algorithm>
 #include <cctype>
@@ -17,12 +17,12 @@
 #include "base/event_loop.h"
 #include "framework_i18n.h"
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 using namespace std::chrono_literals;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
-namespace cutefish::bluez {
+namespace properdesktop::bluez {
 
 static constexpr const char* kService = "org.bluez";
 static constexpr const char* kPropertiesInterface = "org.freedesktop.DBus.Properties";
@@ -531,7 +531,7 @@ void Manager::call(const std::string& path, const std::string& interface, const 
             if (generation != m_generation)
                 return;
             if (reply.isError() && errors == Errors::Report) {
-                std::fprintf(stderr, "cutefish.bluez: %s failed: %s %s\n", method.c_str(), reply.error().name.c_str(),
+                std::fprintf(stderr, "properdesktop.bluez: %s failed: %s %s\n", method.c_str(), reply.error().name.c_str(),
                              reply.error().message.c_str());
                 const std::string reason = describe(reply.error());
                 fail(reason.empty() ? tr("Bluetooth couldn't complete the request.") : reason);
@@ -595,7 +595,7 @@ void Manager::operate(BluetoothObject* entry, const std::string& method, const s
             if ((pair || cancel) && m_pairingPath == path)
                 finishPrompt();
             if (reply.isError() && !cancel) {
-                std::fprintf(stderr, "cutefish.bluez: %s failed: %s %s\n", method.c_str(),
+                std::fprintf(stderr, "properdesktop.bluez: %s failed: %s %s\n", method.c_str(),
                              reply.error().name.c_str(), reply.error().message.c_str());
                 // Dismissing the pairing prompt ends Pair with Canceled or Rejected,
                 // and a device that is already in the requested state needs no report.
@@ -1019,4 +1019,4 @@ void Manager::clearError()
     changed.emit();
 }
 
-} // namespace cutefish::bluez
+} // namespace properdesktop::bluez

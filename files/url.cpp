@@ -1,16 +1,16 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/url.h"
+#include "properdesktop/files/url.h"
 
 #include <functional>
 
 #include "base/strings.h"
 #include "base/url.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
 // RFC 3986's path characters and the brackets, written without percent-encoding.
 static constexpr std::string_view kPathKeep = "!$&'()*+,;=:@/[]";
@@ -208,4 +208,4 @@ size_t UrlHash::operator()(const Url& url) const
     return seed;
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

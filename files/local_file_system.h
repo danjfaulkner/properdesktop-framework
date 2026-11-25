@@ -6,11 +6,11 @@
 #include <cstdint>
 #include <string>
 
-#include "cutefish/files/file_item.h"
-#include "cutefish/files/file_system_url.h"
-#include "cutefish/files/operation_context.h"
+#include "properdesktop/files/file_item.h"
+#include "properdesktop/files/file_system_url.h"
+#include "properdesktop/files/operation_context.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // The operations themselves, blocking, on the calling thread. Each throws a
 // Failure; copies and moves stage their output under a hidden name and leave
@@ -42,4 +42,4 @@ public:
     static void emptyTrash(OperationContext& context);
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

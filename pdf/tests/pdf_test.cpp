@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/pdf/document.h"
+#include "properdesktop/pdf/document.h"
 
 #include <gtest/gtest.h>
 
@@ -15,12 +15,12 @@
 
 #include <unistd.h>
 
-using namespace cutefish;
-using cutefish::pdf::Document;
+using namespace properdesktop;
+using properdesktop::pdf::Document;
 
 namespace {
 
-const std::filesystem::path kDirectory = "/tmp/cutefish-pdf-test-" + std::to_string(getpid());
+const std::filesystem::path kDirectory = "/tmp/properdesktop-pdf-test-" + std::to_string(getpid());
 
 std::string stream(const std::string& contents)
 {
@@ -48,7 +48,7 @@ std::string pdfOf(const std::vector<std::string>& objects)
     return out;
 }
 
-// Page 1: 200 x 100, a red square at its top left, "Hello Cutefish", a link
+// Page 1: 200 x 100, a red square at its top left, "Hello Proper Desktop", a link
 // to a web address and one to page 2. Page 2: 300 x 400 turned a quarter.
 // An outline of two items, the second with a child.
 std::string samplePdf()
@@ -59,10 +59,10 @@ std::string samplePdf()
         "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 200 100] /Contents 5 0 R "
         "/Resources << /Font << /F1 6 0 R >> >> /Annots [7 0 R 8 0 R] >>",
         "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 400] /Rotate 90 /Contents 12 0 R >>",
-        stream("1 0 0 rg 0 80 20 20 re f BT /F1 12 Tf 30 50 Td (Hello Cutefish) Tj ET"),
+        stream("1 0 0 rg 0 80 20 20 re f BT /F1 12 Tf 30 50 Td (Hello Proper Desktop) Tj ET"),
         "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
         "<< /Type /Annot /Subtype /Link /Rect [100 0 200 30] /Border [0 0 0] "
-        "/A << /S /URI /URI (https://cutefish.org) >> >>",
+        "/A << /S /URI /URI (https://properdesktop.org) >> >>",
         "<< /Type /Annot /Subtype /Link /Rect [100 70 200 100] /Border [0 0 0] /Dest [4 0 R /XYZ 0 400 0] >>",
         "<< /Type /Outlines /First 10 0 R /Last 11 0 R /Count 3 >>",
         "<< /Title (First) /Parent 9 0 R /Next 11 0 R /Dest [3 0 R /Fit] >>",
@@ -138,20 +138,20 @@ TEST_F(PdfTest, TextHasItsCharactersAndBoxes)
     const auto document = openSample();
     ASSERT_TRUE(document);
     const pdf::PageText text = document->text(0);
-    ASSERT_EQ(text.text(0, text.characters.size()), "Hello Cutefish");
+    ASSERT_EQ(text.text(0, text.characters.size()), "Hello Proper Desktop");
     const base::RectF h = text.characters[0].box;
     EXPECT_NEAR(h.left(), 30, 1.5);
     // The baseline is 50 above the bottom: 50 below the top of a 100 tall page.
     EXPECT_NEAR(h.bottom(), 50, 1.5);
     EXPECT_GT(h.height(), 5);
 
-    const std::vector<pdf::Match> matches = document->find(0, "cutefish");
+    const std::vector<pdf::Match> matches = document->find(0, "properdesktop");
     ASSERT_EQ(matches.size(), 1u);
     EXPECT_EQ(matches[0].first, 6u);
     EXPECT_EQ(matches[0].count, 8u);
     ASSERT_EQ(matches[0].rects.size(), 1u);
     EXPECT_GT(matches[0].rects[0].left(), h.right());
-    EXPECT_TRUE(document->find(0, "cutefish", true).empty());
+    EXPECT_TRUE(document->find(0, "properdesktop", true).empty());
 }
 
 TEST_F(PdfTest, LinksGoToAPageOrAnAddress)
@@ -160,7 +160,7 @@ TEST_F(PdfTest, LinksGoToAPageOrAnAddress)
     ASSERT_TRUE(document);
     const std::vector<pdf::Link> links = document->links(0);
     ASSERT_EQ(links.size(), 2u);
-    EXPECT_EQ(links[0].uri, "https://cutefish.org");
+    EXPECT_EQ(links[0].uri, "https://properdesktop.org");
     EXPECT_EQ(links[0].area, base::RectF(100, 70, 100, 30));
     EXPECT_EQ(links[1].destination.page, 1);
     EXPECT_EQ(links[1].area, base::RectF(100, 0, 100, 30));
@@ -185,7 +185,7 @@ TEST_F(PdfTest, StandardFontsDrawWhateverFontsTheSystemHas)
 {
     const auto document = openSample();
     ASSERT_TRUE(document);
-    // "Hello Cutefish" in Helvetica, not embedded: PDFium's own copy of the
+    // "Hello Proper Desktop" in Helvetica, not embedded: PDFium's own copy of the
     // standard fonts draws it.
     const pdf::Bitmap page = document->render(0, 2, base::Rect(0, 0, 400, 200));
     int ink = 0;

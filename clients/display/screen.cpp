@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/display/screen.h"
+#include "properdesktop/display/screen.h"
 
 #include <algorithm>
 #include <chrono>
@@ -9,9 +9,9 @@
 #include "framework_i18n.h"
 
 using namespace std::chrono_literals;
-using cutefish::framework::tr;
+using properdesktop::framework::tr;
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
 Screen::Screen(std::string serviceName)
     : m_client(std::move(serviceName))
@@ -113,4 +113,4 @@ void Screen::revert()
         m_client.revert(m_client.state().previewToken);
 }
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

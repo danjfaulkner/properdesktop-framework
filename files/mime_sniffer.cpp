@@ -22,9 +22,9 @@
 #include "base/paths.h"
 #include "base/strings.h"
 
-namespace cutefish::files::internal {
+namespace properdesktop::files::internal {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
 // How much of a file content matching reads.
 static constexpr size_t SniffLength = 16384;
@@ -1025,4 +1025,4 @@ std::string MimeSniffer::canonicalName(const std::string& name)
     return database()->canonicalName(name);
 }
 
-} // namespace cutefish::files::internal
+} // namespace properdesktop::files::internal

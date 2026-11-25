@@ -15,13 +15,13 @@
 
 #include "base/signal.h"
 #include "base/timer.h"
-#include "cutefish/audio/audio_object.h"
+#include "properdesktop/audio/audio_object.h"
 
-namespace cutefish::base {
+namespace properdesktop::base {
 class EventLoop;
 }
 
-namespace cutefish::audio {
+namespace properdesktop::audio {
 
 // The PipeWire daemon's audio cards, nodes and streams, read on the calling
 // thread's event loop, with the default sink and source from its metadata.
@@ -116,4 +116,4 @@ private:
     bool m_failurePending = false;
 };
 
-} // namespace cutefish::audio
+} // namespace properdesktop::audio

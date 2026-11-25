@@ -14,7 +14,7 @@
 #include "base/signal.h"
 #include "base/weak_ptr.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 struct Volume
 {
@@ -117,4 +117,4 @@ private:
     base::WeakPtrFactory<VolumeManager> m_weakFactory{this};
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

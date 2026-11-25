@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 struct Error
 {
@@ -28,4 +28,4 @@ public:
     Error error;
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

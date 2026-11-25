@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/file_item.h"
+#include "properdesktop/files/file_item.h"
 
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -9,18 +9,18 @@
 
 #include "base/locale.h"
 #include "base/paths.h"
-#include "cutefish/files/error.h"
-#include "cutefish/files/file_system_url.h"
-#include "cutefish/files/local_file_system.h"
+#include "properdesktop/files/error.h"
+#include "properdesktop/files/file_system_url.h"
+#include "properdesktop/files/local_file_system.h"
 #include "applications_folder_p.h"
-#include "cutefish/files/mime_types.h"
+#include "properdesktop/files/mime_types.h"
 #include "mime_sniffer_p.h"
 #include "path_utils_p.h"
 #include "trash_directory_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
 static const std::string s_empty;
 static const Url s_emptyUrl;
@@ -426,4 +426,4 @@ bool canMoveStandardFolderTo(const Url& source, const Url& destination)
         && internal::cleanPath(destination.toLocalFile()) == cleanedHome;
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

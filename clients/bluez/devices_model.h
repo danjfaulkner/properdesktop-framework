@@ -7,9 +7,9 @@
 #include <vector>
 
 #include "base/signal.h"
-#include "cutefish/bluez/bluetooth_object.h"
+#include "properdesktop/bluez/bluetooth_object.h"
 
-namespace cutefish::bluez {
+namespace properdesktop::bluez {
 
 class Manager;
 
@@ -56,4 +56,4 @@ private:
     bool m_namedOnly = false;
 };
 
-} // namespace cutefish::bluez
+} // namespace properdesktop::bluez

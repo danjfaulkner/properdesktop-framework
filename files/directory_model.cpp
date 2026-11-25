@@ -1,16 +1,16 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/directory_model.h"
+#include "properdesktop/files/directory_model.h"
 
 #include <algorithm>
 #include <unordered_set>
 
-#include "cutefish/files/background_release.h"
-#include "cutefish/files/task.h"
+#include "properdesktop/files/background_release.h"
+#include "properdesktop/files/task.h"
 #include "path_utils_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 void DirectoryModel::setDirLister(DirectoryLister* lister)
 {
@@ -214,4 +214,4 @@ void DirectoryModel::synchronize()
     releaseInBackground(std::move(positions));
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

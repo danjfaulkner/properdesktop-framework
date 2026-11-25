@@ -8,7 +8,7 @@
 #include "base/geometry.h"
 #include "ui/bitmap.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 struct Thumbnail
 {
@@ -46,4 +46,4 @@ namespace internal {
 void setThumbnailCacheRoot(const std::string& path);
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

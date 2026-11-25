@@ -1,17 +1,17 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/file_system_url.h"
+#include "properdesktop/files/file_system_url.h"
 
 #include <cerrno>
 
 #include "base/strings.h"
-#include "cutefish/files/error.h"
+#include "properdesktop/files/error.h"
 #include "trash_directory_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
 FileSystemUrl::FileSystemUrl(Url url)
     : m_url(std::move(url))
@@ -51,4 +51,4 @@ std::string FileSystemUrl::localPath() const
     return trash.path + "/files" + (inside.empty() ? std::string() : '/' + inside);
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

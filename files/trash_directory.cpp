@@ -17,13 +17,13 @@
 #include "base/paths.h"
 #include "base/strings.h"
 #include "base/url.h"
-#include "cutefish/files/error.h"
+#include "properdesktop/files/error.h"
 #include "path_utils_p.h"
 #include "posix_p.h"
 
-namespace cutefish::files::internal {
+namespace properdesktop::files::internal {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
 static std::mutex s_overridesMutex;
 static std::string s_mountTable = "/proc/self/mountinfo";
@@ -130,7 +130,7 @@ static bool holdsNoTrash(const std::string& mountPoint, const std::string& type)
         "pstore",   "autofs",    "mqueue",     "hugetlbfs",   "configfs",
         "fusectl",  "efivarfs",  "nsfs",       "binfmt_misc", "rpc_pipefs",
         "tmpfs",    "ramfs",
-        "fuse.portal", "fuse.gvfsd-fuse", "fuse.cutefish-mountd",
+        "fuse.portal", "fuse.gvfsd-fuse", "fuse.properdesktop-mountd",
         "nfs",      "nfs4",      "cifs",       "smb3",        "smbfs",
         "ncpfs",    "afs",       "ceph",       "9p",          "glusterfs",
         "coda",     "davfs",     "fuse.sshfs", "fuse.rclone", "fuse.davfs2",
@@ -491,4 +491,4 @@ bool readTrashInfo(const TrashDirectory& trash, const std::string& name, TrashIn
     return true;
 }
 
-} // namespace cutefish::files::internal
+} // namespace properdesktop::files::internal

@@ -5,7 +5,7 @@
 // Upstream: chromium/src/ash/display/cros_display_config.h
 // Revision: 7acd40ddefff49c9d36144999aafdbb674dbd07a
 //
-// Adapted for Cutefish: plain value types for the compositor's versioned
+// Adapted for Proper Desktop: plain value types for the compositor's versioned
 // session D-Bus tuples, without Ash or Mojo.
 
 #pragma once
@@ -19,7 +19,7 @@
 
 #include "base/dbus_types.h"
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
 // OperationFinished's errorCode, in the compositor's DisplayErrorCode order.
 enum class ErrorCode : uint32_t {
@@ -147,9 +147,9 @@ struct Placement
 
 using MirrorGroups = std::vector<std::vector<std::string>>;
 
-} // namespace cutefish::display
+} // namespace properdesktop::display
 
-namespace cutefish::base::dbus {
+namespace properdesktop::base::dbus {
 
 template<typename Tie>
 struct TiedValues;
@@ -185,4 +185,4 @@ template<> struct Type<display::LogicalDisplay> : TiedType<display::LogicalDispl
 template<> struct Type<display::DisplayRequest> : TiedType<display::DisplayRequest> {};
 template<> struct Type<display::Placement> : TiedType<display::Placement> {};
 
-} // namespace cutefish::base::dbus
+} // namespace properdesktop::base::dbus

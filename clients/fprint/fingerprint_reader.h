@@ -10,10 +10,10 @@
 
 #include "base/dbus.h"
 #include "base/signal.h"
-#include "cutefish/fprint/fingerprint_enrollment.h"
-#include "cutefish/fprint/fingerprint_finger.h"
+#include "properdesktop/fprint/fingerprint_enrollment.h"
+#include "properdesktop/fprint/fingerprint_finger.h"
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 enum class ScanType {
     // The finger rests on the sensor.
@@ -88,4 +88,4 @@ private:
     bool m_listed = false;
 };
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

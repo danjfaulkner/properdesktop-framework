@@ -7,7 +7,7 @@
 #include <string>
 #include <string_view>
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // A URL: the scheme in lower case and the other parts decoded, so path() of
 // "file:///a%20b" is "/a b". toString() writes it percent-encoded again.
@@ -80,4 +80,4 @@ struct UrlHash
     size_t operator()(const Url& url) const;
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

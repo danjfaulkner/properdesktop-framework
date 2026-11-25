@@ -12,7 +12,7 @@
 // KDE editors lay it out: a field per vpn.data key, or per vpn.secrets key
 // with its `-flags` entry in vpn.data. The forms in Settings are drawn from
 // these tables.
-namespace cutefish::networkmanager::vpn::schema {
+namespace properdesktop::networkmanager::vpn::schema {
 
 enum class Type {
     Text,
@@ -100,4 +100,4 @@ bool apply(const std::string& kind, const Values& values, const std::map<std::st
            const std::map<std::string, std::string>& secrets, bool shared, std::map<std::string, std::string>& data,
            std::map<std::string, std::string>& vpnSecrets, std::string* error);
 
-} // namespace cutefish::networkmanager::vpn::schema
+} // namespace properdesktop::networkmanager::vpn::schema

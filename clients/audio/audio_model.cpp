@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/audio/audio_model.h"
+#include "properdesktop/audio/audio_model.h"
 
 #include <algorithm>
 
-#include "cutefish/audio/backend.h"
+#include "properdesktop/audio/backend.h"
 
-namespace cutefish::audio {
+namespace properdesktop::audio {
 
 AudioModel::AudioModel(AudioObject::Kind kind, std::shared_ptr<Backend> backend)
     : m_backend(std::move(backend))
@@ -47,4 +47,4 @@ void AudioModel::removeObject(const std::shared_ptr<AudioObject>& object)
     rowsChanged.emit();
 }
 
-} // namespace cutefish::audio
+} // namespace properdesktop::audio

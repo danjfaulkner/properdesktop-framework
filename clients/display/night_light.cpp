@@ -1,18 +1,18 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/display/night_light.h"
+#include "properdesktop/display/night_light.h"
 
 #include <cstdint>
 #include <string>
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
-static constexpr const char* kService = "org.cutefish.Services";
-static constexpr const char* kPath = "/org/cutefish/Services/NightLight";
-static constexpr const char* kInterface = "org.cutefish.Services.NightLight";
+static constexpr const char* kService = "org.properdesktop.Services";
+static constexpr const char* kPath = "/org/properdesktop/Services/NightLight";
+static constexpr const char* kInterface = "org.properdesktop.Services.NightLight";
 
 template<typename T>
 void NightLight::update(T& member, T value)
@@ -132,4 +132,4 @@ void NightLight::setPreview(bool preview)
     m_service.send("setPreview", preview);
 }
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

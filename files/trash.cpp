@@ -11,15 +11,15 @@
 #include "base/strings.h"
 #include "base/url.h"
 #include "base/uuid.h"
-#include "cutefish/files/local_file_system.h"
+#include "properdesktop/files/local_file_system.h"
 #include "framework_i18n.h"
 #include "posix_p.h"
 #include "trash_directory_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 using namespace internal;
-using cutefish::framework::tr;
+using properdesktop::framework::tr;
 
 static void ensureHomeTrash()
 {
@@ -431,4 +431,4 @@ void LocalFileSystem::emptyTrash(OperationContext& ctx)
         throw *failure;
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

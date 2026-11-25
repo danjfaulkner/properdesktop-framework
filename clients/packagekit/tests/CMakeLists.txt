@@ -2,7 +2,7 @@ find_package(GTest REQUIRED)
 include(GoogleTest)
 
 add_executable(packagekit-client-tests updates_test.cpp)
-target_link_libraries(packagekit-client-tests PRIVATE Cutefish::PackageKitClient GTest::gtest_main)
+target_link_libraries(packagekit-client-tests PRIVATE ProperDesktop::PackageKitClient GTest::gtest_main)
 # On a session bus of its own without service files: some desktops install a
 # session service under PackageKit's name, which would answer the absent
 # daemon's case.

@@ -7,7 +7,7 @@
 
 // MIME types from the shared-mime-info files of the XDG data directories;
 // every function may run on any thread without a lock held.
-namespace cutefish::files::mime {
+namespace properdesktop::files::mime {
 
 // The type of the file at path: a directory is inode/directory, a
 // device, fifo or socket its inode/ type, anything else is matched by name
@@ -27,4 +27,4 @@ std::string description(const std::string& type);
 // The icon the type names, else the type with '/' replaced by '-'.
 std::string iconName(const std::string& type);
 
-} // namespace cutefish::files::mime
+} // namespace properdesktop::files::mime

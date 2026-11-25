@@ -9,9 +9,9 @@
 #include <string>
 
 #include "base/dbus.h"
-#include "cutefish/networkmanager/types.h"
+#include "properdesktop/networkmanager/types.h"
 
-namespace cutefish::networkmanager::wifi {
+namespace properdesktop::networkmanager::wifi {
 
 // SSIDs are bytes: a label is for display only and never goes back to
 // NetworkManager. Bytes that aren't UTF-8 are read in the charsets of the
@@ -50,4 +50,4 @@ std::string standardLabel(WifiStandard standard);
 // Cached nl80211 scan results for an interface, keyed by lowercase BSSID.
 std::map<std::string, WifiStandard> scanStandards(const std::string& interfaceName);
 
-} // namespace cutefish::networkmanager::wifi
+} // namespace properdesktop::networkmanager::wifi

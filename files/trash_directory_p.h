@@ -9,9 +9,9 @@
 #include <string>
 #include <vector>
 
-#include "cutefish/files/url.h"
+#include "properdesktop/files/url.h"
 
-namespace cutefish::files::internal {
+namespace properdesktop::files::internal {
 
 // A trash directory, holding files/ and info/. Its items are trash:/<id>/<name>.
 struct TrashDirectory
@@ -72,4 +72,4 @@ void setMountTable(const std::string& path);
 void setHomeTrashRoot(const std::string& path);
 std::string homeTrashRoot();
 
-} // namespace cutefish::files::internal
+} // namespace properdesktop::files::internal

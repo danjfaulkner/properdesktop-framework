@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/fprint/fingerprint_reader.h"
+#include "properdesktop/fprint/fingerprint_reader.h"
 
 #include <algorithm>
 #include <chrono>
@@ -9,9 +9,9 @@
 
 #include "device_session.h"
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 static constexpr const char* kManagerPath = "/net/reactivated/Fprint/Manager";
 static constexpr const char* kManagerInterface = "net.reactivated.Fprint.Manager";
@@ -145,4 +145,4 @@ std::unique_ptr<Enrollment> Reader::enroll(Finger finger)
     return enrollment;
 }
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

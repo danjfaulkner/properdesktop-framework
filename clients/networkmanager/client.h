@@ -15,9 +15,9 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 #include "base/timer.h"
-#include "cutefish/networkmanager/types.h"
+#include "properdesktop/networkmanager/types.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 // NetworkManager as one GetManagedObjects and the signals since describe it,
 // shared by everything in the process that shows or changes networks. Nothing
@@ -162,4 +162,4 @@ private:
     base::Timer m_retryTimer;
 };
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

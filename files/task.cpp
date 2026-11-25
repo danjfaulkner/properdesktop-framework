@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/task.h"
+#include "properdesktop/files/task.h"
 
 #include <algorithm>
 #include <cerrno>
@@ -12,16 +12,16 @@
 
 #include "base/elapsed_timer.h"
 #include "base/locale.h"
-#include "cutefish/files/file_item.h"
+#include "properdesktop/files/file_item.h"
 #include "framework_i18n.h"
 #include "path_utils_p.h"
 #include "posix_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
-using namespace cutefish::base;
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using namespace properdesktop::base;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
 // A copy within a filesystem that shares extents may take no space at all, so it is not counted.
 static bool takesSpace(const std::string& source, const std::string& directory, bool move)
@@ -719,4 +719,4 @@ Task* drop(const std::vector<Url>& urls, const Url& destination, DropAction acti
                                                urls, destination, ConflictPolicy::Ask, {}});
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

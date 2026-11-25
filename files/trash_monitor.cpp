@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/trash_monitor.h"
+#include "properdesktop/files/trash_monitor.h"
 
 #include <algorithm>
 #include <chrono>
@@ -10,7 +10,7 @@
 
 #include "trash_directory_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 using namespace std::chrono_literals;
 
@@ -108,4 +108,4 @@ void TrashMonitor::refresh()
         });
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

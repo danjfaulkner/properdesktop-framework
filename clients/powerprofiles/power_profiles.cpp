@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/powerprofiles/power_profiles.h"
+#include "properdesktop/powerprofiles/power_profiles.h"
 
 #include <algorithm>
 
-using namespace cutefish::base::dbus;
+using namespace properdesktop::base::dbus;
 
-namespace cutefish::powerprofiles {
+namespace properdesktop::powerprofiles {
 
 static constexpr const char* kService = "org.freedesktop.UPower.PowerProfiles";
 static constexpr const char* kPath = "/org/freedesktop/UPower/PowerProfiles";
@@ -78,4 +78,4 @@ void PowerProfiles::update(const VariantMap& properties)
     }
 }
 
-} // namespace cutefish::powerprofiles
+} // namespace properdesktop::powerprofiles

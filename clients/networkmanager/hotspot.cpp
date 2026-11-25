@@ -1,17 +1,17 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/hotspot.h"
-#include "cutefish/networkmanager/client.h"
-#include "cutefish/networkmanager/variants.h"
-#include "cutefish/networkmanager/wifi_utils.h"
+#include "properdesktop/networkmanager/hotspot.h"
+#include "properdesktop/networkmanager/client.h"
+#include "properdesktop/networkmanager/variants.h"
+#include "properdesktop/networkmanager/wifi_utils.h"
 
 #include <memory>
 #include <unistd.h>
 
 #include "base/event_loop.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 using namespace variants;
 
@@ -136,4 +136,4 @@ void HotspotConfiguration::load()
                    });
 }
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

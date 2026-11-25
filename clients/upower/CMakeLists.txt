@@ -1,4 +1,4 @@
-cutefish_add_client(upower TARGET UPowerClient
+properdesktop_add_client(upower TARGET UPowerClient
     SOURCES battery_status.cpp device.cpp
     HEADERS battery_status.h device.h
 )

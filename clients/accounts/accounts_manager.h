@@ -12,9 +12,9 @@
 
 #include "base/dbus.h"
 #include "base/signal.h"
-#include "cutefish/accounts/user_account.h"
+#include "properdesktop/accounts/user_account.h"
 
-namespace cutefish::accounts {
+namespace properdesktop::accounts {
 
 // The accounts org.freedesktop.Accounts lists, kept up to date as the service
 // adds and deletes them, and the calls that add and delete accounts. One
@@ -76,4 +76,4 @@ private:
     std::map<std::string, uint64_t> m_deletionSerials;
 };
 
-} // namespace cutefish::accounts
+} // namespace properdesktop::accounts

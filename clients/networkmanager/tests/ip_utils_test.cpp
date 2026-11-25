@@ -4,13 +4,13 @@
 #include <endian.h>
 #include <gtest/gtest.h>
 
-#include "cutefish/networkmanager/ip_utils.h"
-#include "cutefish/networkmanager/variants.h"
+#include "properdesktop/networkmanager/ip_utils.h"
+#include "properdesktop/networkmanager/variants.h"
 
-using namespace cutefish::networkmanager;
-using cutefish::base::dbus::Variant;
-using cutefish::base::dbus::VariantMap;
-using namespace cutefish::networkmanager::variants;
+using namespace properdesktop::networkmanager;
+using properdesktop::base::dbus::Variant;
+using properdesktop::base::dbus::VariantMap;
+using namespace properdesktop::networkmanager::variants;
 
 static Variant addresses(const std::vector<std::pair<std::string, uint32_t>>& entries)
 {

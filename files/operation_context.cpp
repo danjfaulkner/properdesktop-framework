@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/operation_context.h"
+#include "properdesktop/files/operation_context.h"
 
 #include <cerrno>
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 void OperationContext::checkpoint(const std::string& path) const
 {
@@ -24,4 +24,4 @@ void OperationContext::advance(uint64_t amount)
         progress(bytes, files);
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

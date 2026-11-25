@@ -7,12 +7,12 @@
 #include <tuple>
 
 #include "base/paths.h"
-#include "cutefish/files/mime_sniffer_p.h"
+#include "properdesktop/files/mime_sniffer_p.h"
 #include "testing.h"
 
-using namespace cutefish;
-using namespace cutefish::files;
-using namespace cutefish::files::testing;
+using namespace properdesktop;
+using namespace properdesktop::files;
+using namespace properdesktop::files::testing;
 
 static const char* const UserPackage =
     "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -21,9 +21,9 @@ static const char* const UserPackage =
     "  <mime-type type=\"text/x-makefile\"><glob-deleteall/></mime-type>\n"
     "  <mime-type type=\"text/troff\"><glob-deleteall/></mime-type>\n"
     "  <mime-type type=\"video/mp2t\"><glob-deleteall/><glob pattern=\"*.m2ts\"/></mime-type>\n"
-    "  <mime-type type=\"application/x-cutefish-test\">\n"
+    "  <mime-type type=\"application/x-properdesktop-test\">\n"
     "    <glob pattern=\"*.ts\"/>\n"
-    "    <magic priority=\"90\"><match type=\"string\" value=\"CUTEFISH\" offset=\"0:64\"/></magic>\n"
+    "    <magic priority=\"90\"><match type=\"string\" value=\"PROPERDESKTOP\" offset=\"0:64\"/></magic>\n"
     "  </mime-type>\n"
     "</mime-info>\n";
 
@@ -64,10 +64,10 @@ TEST(MimeSnifferTest, LocalDirectoryDeletesSystemGlobs)
         {"script.mlab", "x = 1\n", "text/x-matlab"},
         {"page.1", "plain words\n", "application/x-troff-man"},
         {"libsample.so.6", "\x7f" "ELF", "application/x-troff-man"},
-        {"video.ts", "xxCUTEFISHxx", "application/x-cutefish-test"},
+        {"video.ts", "xxPROPERDESKTOPxx", "application/x-properdesktop-test"},
         {"strings.ts", "<?xml version=\"1.0\"?>\n<TS version=\"2.1\"></TS>\n", "text/vnd.trolltech.linguist"},
         {"clip.m2ts", std::string(1, 0x47) + std::string(187, '\0'), "video/mp2t"},
-        {"marked", "xxCUTEFISHxx", "application/x-cutefish-test"},
+        {"marked", "xxPROPERDESKTOPxx", "application/x-properdesktop-test"},
         {"photo.jpg", "\xff\xd8\xff\xe0", "image/jpeg"},
     };
 
@@ -78,7 +78,7 @@ TEST(MimeSnifferTest, LocalDirectoryDeletesSystemGlobs)
 
     // The deletions took effect: the type no longer comes from these names.
     EXPECT_NE(internal::MimeSniffer::self()->mimeTypeForFile(dir.filePath("Makefile")), "text/x-makefile");
-    EXPECT_EQ(internal::MimeSniffer::self()->canonicalName("application/x-cutefish-test"), "application/x-cutefish-test");
+    EXPECT_EQ(internal::MimeSniffer::self()->canonicalName("application/x-properdesktop-test"), "application/x-properdesktop-test");
 
     internal::setUserDataDirectory({});
 }

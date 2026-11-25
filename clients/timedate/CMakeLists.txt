@@ -1,4 +1,4 @@
-cutefish_add_client(timedate TARGET TimeDateClient
+properdesktop_add_client(timedate TARGET TimeDateClient
     SOURCES time_date.cpp
     HEADERS time_date.h
 )

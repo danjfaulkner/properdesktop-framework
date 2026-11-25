@@ -9,9 +9,9 @@
 #include <vector>
 
 #include "base/signal.h"
-#include "cutefish/networkmanager/types.h"
+#include "properdesktop/networkmanager/types.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 class Client;
 
@@ -97,4 +97,4 @@ std::vector<NetworkItem> listItems(const std::vector<NetworkItem>& items, Connec
 // Locale-aware, as names are listed.
 int compareNames(const std::string& a, const std::string& b);
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

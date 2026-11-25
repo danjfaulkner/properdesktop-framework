@@ -14,15 +14,15 @@
 #include "base/dbus.h"
 #include "base/event_loop.h"
 #include "base/timer.h"
-#include "cutefish/display/display_client.h"
+#include "properdesktop/display/display_client.h"
 
-using namespace cutefish::base;
-using namespace cutefish::display;
+using namespace properdesktop::base;
+using namespace properdesktop::display;
 using namespace std::chrono_literals;
 
-static constexpr const char* kService = "org.cutefish.DisplayConfig.ClientTest";
-static constexpr const char* kPath = "/org/cutefish/DisplayConfig1";
-static constexpr const char* kInterface = "org.cutefish.DisplayConfig1";
+static constexpr const char* kService = "org.properdesktop.DisplayConfig.ClientTest";
+static constexpr const char* kPath = "/org/properdesktop/DisplayConfig1";
+static constexpr const char* kInterface = "org.properdesktop.DisplayConfig1";
 
 // Runs the loop until the condition holds or the time is up.
 static bool waitFor(EventLoop& loop, const std::function<bool()>& condition, std::chrono::milliseconds timeout = 5s)

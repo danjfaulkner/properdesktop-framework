@@ -1,12 +1,12 @@
 # PDF: documents read with PDFium, built in as hidden objects; only the
-# cutefish::pdf API is exported. scripts/fetch-pdfium.sh puts the pinned
+# properdesktop::pdf API is exported. scripts/fetch-pdfium.sh puts the pinned
 # sources in third_party.
-#   find_package(CutefishPdf REQUIRED)
-#   target_link_libraries(app PRIVATE Cutefish::Pdf)
+#   find_package(ProperDesktopPdf REQUIRED)
+#   target_link_libraries(app PRIVATE ProperDesktop::Pdf)
 
 enable_language(C)
 
-find_package(CutefishToolkit REQUIRED)
+find_package(ProperDesktopToolkit REQUIRED)
 find_package(PkgConfig REQUIRED)
 
 set(PDFIUM_SOURCE_DIR ${PROJECT_SOURCE_DIR}/third_party/pdfium)
@@ -64,28 +64,28 @@ target_compile_definitions(pdfium-objects PRIVATE
 target_compile_options(pdfium-objects PRIVATE -w)
 target_link_libraries(pdfium-objects PRIVATE PkgConfig::PdfiumSystem)
 
-cutefish_framework_add_library(cutefish-pdf
+properdesktop_framework_add_library(properdesktop-pdf
     TARGET Pdf
     MODULE pdf
-    EXPORT CutefishPdfTargets
+    EXPORT ProperDesktopPdfTargets
     SOURCES
         document.cpp
         system_fonts.cpp
         system_fonts_p.h
         $<TARGET_OBJECTS:pdfium-objects>
     HEADERS document.h
-    PUBLIC_LIBRARIES Cutefish::ToolkitBase
+    PUBLIC_LIBRARIES ProperDesktop::ToolkitBase
     PRIVATE_LIBRARIES PkgConfig::PdfiumSystem
 )
-target_include_directories(cutefish-pdf PRIVATE ${PDFIUM_SOURCE_DIR})
+target_include_directories(properdesktop-pdf PRIVATE ${PDFIUM_SOURCE_DIR})
 # Only the library's own symbols: PDFium's, its inline functions' and the
 # system libraries' stay inside.
-target_link_options(cutefish-pdf PRIVATE -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/cutefish-pdf.map)
-set_property(TARGET cutefish-pdf APPEND PROPERTY LINK_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/cutefish-pdf.map)
+target_link_options(properdesktop-pdf PRIVATE -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/properdesktop-pdf.map)
+set_property(TARGET properdesktop-pdf APPEND PROPERTY LINK_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/properdesktop-pdf.map)
 
 if(BUILD_TESTING)
     add_subdirectory(tests)
 endif()
 
-cutefish_framework_export(CutefishPdf CutefishPdfTargets)
-cutefish_framework_add_package(CutefishPdf)
+properdesktop_framework_export(ProperDesktopPdf ProperDesktopPdfTargets)
+properdesktop_framework_add_package(ProperDesktopPdf)

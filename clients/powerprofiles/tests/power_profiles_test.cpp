@@ -9,12 +9,12 @@
 #include <thread>
 
 #include "base/event_loop.h"
-#include "cutefish/powerprofiles/power_profiles.h"
+#include "properdesktop/powerprofiles/power_profiles.h"
 
-using namespace cutefish;
-using namespace cutefish::base;
-using namespace cutefish::base::dbus;
-using namespace cutefish::powerprofiles;
+using namespace properdesktop;
+using namespace properdesktop::base;
+using namespace properdesktop::base::dbus;
+using namespace properdesktop::powerprofiles;
 using namespace std::chrono_literals;
 
 namespace {

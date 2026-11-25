@@ -5,9 +5,9 @@
 // Upstream: chromium/src/ash/display/cros_display_config.cc
 // Revision: 7acd40ddefff49c9d36144999aafdbb674dbd07a
 //
-// Adapted for Cutefish: built on the compositor's native display requests.
+// Adapted for Proper Desktop: built on the compositor's native display requests.
 
-#include "cutefish/display/output_model.h"
+#include "properdesktop/display/output_model.h"
 
 #include <algorithm>
 #include <charconv>
@@ -20,10 +20,10 @@
 
 #include "framework_i18n.h"
 
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
 namespace {
 
@@ -662,4 +662,4 @@ MirrorGroups OutputModel::mirrorGroups() const
     return result;
 }
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

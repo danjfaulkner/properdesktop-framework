@@ -2,7 +2,7 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(PIPEWIRE REQUIRED libpipewire-0.3>=0.3.65)
 pkg_check_modules(SPA REQUIRED libspa-0.2)
 
-cutefish_add_client(audio TARGET AudioClient
+properdesktop_add_client(audio TARGET AudioClient
     SOURCES
         audio_model.cpp
         audio_object.cpp
@@ -15,8 +15,8 @@ cutefish_add_client(audio TARGET AudioClient
         volume_monitor.h
 )
 # By path and name rather than as imported targets, which the installed package would have to recreate.
-target_include_directories(cutefish-audio-client PUBLIC ${PIPEWIRE_INCLUDE_DIRS} ${SPA_INCLUDE_DIRS})
-target_link_libraries(cutefish-audio-client PUBLIC ${PIPEWIRE_LIBRARIES})
+target_include_directories(properdesktop-audio-client PUBLIC ${PIPEWIRE_INCLUDE_DIRS} ${SPA_INCLUDE_DIRS})
+target_link_libraries(properdesktop-audio-client PUBLIC ${PIPEWIRE_LIBRARIES})
 
 if(BUILD_TESTING)
     add_subdirectory(tests)

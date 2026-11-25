@@ -10,7 +10,7 @@
 
 #include "base/dbus.h"
 
-namespace cutefish::packagekit {
+namespace properdesktop::packagekit {
 
 struct Package
 {
@@ -106,4 +106,4 @@ private:
     bool m_attached = false;
 };
 
-} // namespace cutefish::packagekit
+} // namespace properdesktop::packagekit

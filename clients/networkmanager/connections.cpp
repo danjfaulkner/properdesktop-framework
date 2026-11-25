@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/connections.h"
-#include "cutefish/networkmanager/client.h"
-#include "cutefish/networkmanager/variants.h"
+#include "properdesktop/networkmanager/connections.h"
+#include "properdesktop/networkmanager/client.h"
+#include "properdesktop/networkmanager/variants.h"
 
 #include <cstdio>
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 using base::dbus::Variant;
 using namespace variants;
@@ -169,4 +169,4 @@ void ConnectionSettings::refresh()
         this->changed.emit();
 }
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

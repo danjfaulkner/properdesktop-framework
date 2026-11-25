@@ -12,11 +12,11 @@
 #include "base/signal.h"
 #include "base/timer.h"
 
-namespace cutefish::base {
+namespace properdesktop::base {
 class EventLoop;
 }
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // Follows folders through the inotify instance the loop's thread shares with
 // every other watch in the process: one instance per process, whose watches
@@ -71,4 +71,4 @@ private:
     base::Timer m_emit;
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

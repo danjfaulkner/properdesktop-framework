@@ -8,9 +8,9 @@
 #include <functional>
 #include <string>
 
-#include "cutefish/files/error.h"
+#include "properdesktop/files/error.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 enum class ConflictPolicy {
     Fail,
@@ -43,4 +43,4 @@ struct OperationContext
     void advance(uint64_t amount);
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

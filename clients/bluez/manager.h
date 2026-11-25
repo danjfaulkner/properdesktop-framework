@@ -16,13 +16,13 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 #include "base/timer.h"
-#include "cutefish/bluez/bluetooth_object.h"
+#include "properdesktop/bluez/bluetooth_object.h"
 
-namespace cutefish::bluez {
+namespace properdesktop::bluez {
 
 inline constexpr const char* kAdapterInterface = "org.bluez.Adapter1";
 inline constexpr const char* kDeviceInterface = "org.bluez.Device1";
-inline constexpr const char* kAgentPath = "/org/cutefish/BluetoothAgent";
+inline constexpr const char* kAgentPath = "/org/properdesktop/BluetoothAgent";
 
 class Rfkill;
 
@@ -167,4 +167,4 @@ private:
     base::Subscription m_notifications;
 };
 
-} // namespace cutefish::bluez
+} // namespace properdesktop::bluez

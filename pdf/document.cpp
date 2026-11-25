@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/pdf/document.h"
+#include "properdesktop/pdf/document.h"
 #include "system_fonts_p.h"
 
 #include <algorithm>
@@ -17,7 +17,7 @@
 #include "public/fpdf_text.h"
 #include "public/fpdfview.h"
 
-namespace cutefish::pdf {
+namespace properdesktop::pdf {
 
 // Pages kept parsed: a page shown as several tiles also gives its text and
 // links, and its neighbours are near.
@@ -494,4 +494,4 @@ base::PointF Document::position(const Destination& destination) const
     return {std::max(0.0, point.x()), std::max(0.0, point.y())};
 }
 
-} // namespace cutefish::pdf
+} // namespace properdesktop::pdf

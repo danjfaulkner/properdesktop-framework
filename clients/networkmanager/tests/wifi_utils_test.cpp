@@ -3,9 +3,9 @@
 
 #include <gtest/gtest.h>
 
-#include "cutefish/networkmanager/wifi_utils.h"
+#include "properdesktop/networkmanager/wifi_utils.h"
 
-using namespace cutefish::networkmanager;
+using namespace properdesktop::networkmanager;
 
 TEST(WifiUtils, SsidLabels)
 {

@@ -9,9 +9,9 @@
 #include <string>
 #include <vector>
 
-#include "cutefish/networkmanager/types.h"
+#include "properdesktop/networkmanager/types.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 class Client;
 
@@ -102,4 +102,4 @@ std::optional<Settings> wireGuardSettings(const WireGuardForm& form, const Setti
 std::string wireGuardConfig(const Settings& settings);
 
 } // namespace vpn
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

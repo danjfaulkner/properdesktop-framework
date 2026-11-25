@@ -9,10 +9,10 @@
 
 #include "base/signal.h"
 #include "base/timer.h"
-#include "cutefish/display/display_client.h"
-#include "cutefish/display/output_model.h"
+#include "properdesktop/display/display_client.h"
+#include "properdesktop/display/output_model.h"
 
-namespace cutefish::display {
+namespace properdesktop::display {
 
 // The displays as Settings shows them: the compositor's state, edits that
 // apply as soon as they are made, and the confirmation a mode change waits for.
@@ -20,7 +20,7 @@ class Screen
 {
 public:
     // Tests name a display service of their own.
-    explicit Screen(std::string serviceName = "org.cutefish.DisplayConfig");
+    explicit Screen(std::string serviceName = "org.properdesktop.DisplayConfig");
     ~Screen();
 
     Screen(const Screen&) = delete;
@@ -62,4 +62,4 @@ private:
     std::vector<base::Subscription> m_subscriptions;
 };
 
-} // namespace cutefish::display
+} // namespace properdesktop::display

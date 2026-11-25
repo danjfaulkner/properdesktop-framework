@@ -1,13 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/inet.h"
+#include "properdesktop/networkmanager/inet.h"
 
 #include <arpa/inet.h>
 #include <cctype>
 #include <cstring>
 
-namespace cutefish::networkmanager::inet {
+namespace properdesktop::networkmanager::inet {
 
 std::optional<uint32_t> parseIpv4(const std::string& text)
 {
@@ -93,4 +93,4 @@ bool isLinkLocal(const std::string& text)
     return false;
 }
 
-} // namespace cutefish::networkmanager::inet
+} // namespace properdesktop::networkmanager::inet

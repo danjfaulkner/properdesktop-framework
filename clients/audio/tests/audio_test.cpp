@@ -26,16 +26,16 @@
 
 #include "base/event_loop.h"
 #include "base/timer.h"
-#include "cutefish/audio/audio_model.h"
-#include "cutefish/audio/backend.h"
-#include "cutefish/audio/volume_monitor.h"
+#include "properdesktop/audio/audio_model.h"
+#include "properdesktop/audio/backend.h"
+#include "properdesktop/audio/volume_monitor.h"
 #include "fake_audio_device.h"
 #include "test_stream.h"
 
 extern char** environ;
 
-using namespace cutefish::audio;
-using namespace cutefish::base;
+using namespace properdesktop::audio;
+using namespace properdesktop::base;
 using namespace std::chrono_literals;
 
 // Runs the loop until the condition holds or the time is up.
@@ -133,12 +133,12 @@ class AudioTest : public testing::Test
 protected:
     static void SetUpTestSuite()
     {
-        char directory[] = "/tmp/cutefish-audio-test-XXXXXX";
+        char directory[] = "/tmp/properdesktop-audio-test-XXXXXX";
         runtime = ::mkdtemp(directory);
         // The PipeWire libraries and daemons find each other through these.
         ::setenv("XDG_RUNTIME_DIR", runtime.c_str(), 1);
         ::setenv("PIPEWIRE_RUNTIME_DIR", runtime.c_str(), 1);
-        ::setenv("PIPEWIRE_REMOTE", "cutefish-audio-test", 1);
+        ::setenv("PIPEWIRE_REMOTE", "properdesktop-audio-test", 1);
         ::setenv("XDG_CONFIG_HOME", (runtime + "/config").c_str(), 1);
         ::setenv("XDG_STATE_HOME", (runtime + "/state").c_str(), 1);
         ::setenv("XDG_CACHE_HOME", (runtime + "/cache").c_str(), 1);
@@ -147,7 +147,7 @@ protected:
         ::unsetenv("WIREPLUMBER_CONFIG_DIR");
         const std::filesystem::path fragments = runtime + "/config/wireplumber/wireplumber.conf.d";
         std::filesystem::create_directories(fragments);
-        std::filesystem::copy_file(WIREPLUMBER_TEST_CONFIG, fragments / "50-cutefish-test.conf");
+        std::filesystem::copy_file(WIREPLUMBER_TEST_CONFIG, fragments / "50-properdesktop-test.conf");
         loop = new EventLoop;
         backend = Backend::shared();
         wait(*loop, 50ms);
@@ -175,7 +175,7 @@ protected:
     {
         const std::string log = runtime + "/servers.log";
         ASSERT_TRUE(server.start(PIPEWIRE_EXECUTABLE, {"-c", AUDIO_TEST_CONFIG}, log));
-        ASSERT_TRUE(waitFor(*loop, [] { return std::filesystem::exists(runtime + "/cutefish-audio-test"); }));
+        ASSERT_TRUE(waitFor(*loop, [] { return std::filesystem::exists(runtime + "/properdesktop-audio-test"); }));
         ASSERT_TRUE(policy.start(WIREPLUMBER_EXECUTABLE, {"--profile=policy"}, log));
     }
 
@@ -191,7 +191,7 @@ protected:
         for (const char* name : {"test-output-a", "test-output-b", "test-input"}) {
             ASSERT_TRUE(waitFor(*loop, [name] { return find(name) != nullptr; }, 10s));
             const auto node = find(name);
-            auto stream = std::make_unique<TestStream>(backend->core(), std::string("cutefish.internal.test-") + name,
+            auto stream = std::make_unique<TestStream>(backend->core(), std::string("properdesktop.internal.test-") + name,
                                                        node->property(PW_KEY_OBJECT_SERIAL),
                                                        node->kind() == AudioObject::Source);
             ASSERT_TRUE(stream->connected);

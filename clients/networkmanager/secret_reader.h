@@ -11,7 +11,7 @@
 
 #include "base/dbus.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 // Reads connection secrets from the user's keyring through the freedesktop
 // Secret Service, by nm-applet's attributes, which the shell's secret agent
@@ -47,4 +47,4 @@ private:
     uint64_t m_nextId = 0;
 };
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

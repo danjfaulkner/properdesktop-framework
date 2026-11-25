@@ -7,9 +7,9 @@
 #include <string>
 #include <vector>
 
-#include "cutefish/networkmanager/types.h"
+#include "properdesktop/networkmanager/types.h"
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 class Client;
 
@@ -65,4 +65,4 @@ std::optional<Settings> settings(const Form& form, const Settings& existing, boo
 bool configurable(const std::string& method);
 
 } // namespace ip
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

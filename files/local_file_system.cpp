@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/local_file_system.h"
+#include "properdesktop/files/local_file_system.h"
 
 #include <algorithm>
 #include <deque>
@@ -14,10 +14,10 @@
 #include "base/application_bundle.h"
 #include "base/strings.h"
 #include "base/uuid.h"
-#include "cutefish/files/file_enumerator.h"
+#include "properdesktop/files/file_enumerator.h"
 #include "posix_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 using namespace internal;
 
@@ -556,7 +556,7 @@ std::string LocalFileSystem::copy(const std::string& source, const std::string& 
 
     ctx.checkpoint(source);
     Parent input(source), output(destination);
-    const std::string temporary = temporaryName(".cutefish-copy-");
+    const std::string temporary = temporaryName(".properdesktop-copy-");
 
     try {
         Writeback writeback;
@@ -586,7 +586,7 @@ std::string LocalFileSystem::link(const std::string& source, const std::string& 
 {
     ctx.checkpoint(source);
     Parent output(destination);
-    const std::string temporary = temporaryName(".cutefish-link-");
+    const std::string temporary = temporaryName(".properdesktop-link-");
     check(::symlinkat(native(source).c_str(), output.fd.value, temporary.c_str()), destination);
 
     try {
@@ -649,7 +649,7 @@ std::string LocalFileSystem::move(const std::string& source, const std::string& 
         Parent input(source), output(destination);
 
         // Renaming an item to itself does nothing, so it goes by way of another name.
-        const std::string temporary = temporaryName(".cutefish-rename-");
+        const std::string temporary = temporaryName(".properdesktop-rename-");
         if (::syscall(SYS_renameat2, input.fd.value, input.name.c_str(), input.fd.value, temporary.c_str(),
                       RENAME_NOREPLACE)
             != 0)
@@ -765,4 +765,4 @@ uint64_t LocalFileSystem::directorySize(const std::string& path, OperationContex
     return FileEnumerator::size(path, ctx);
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

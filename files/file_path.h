@@ -5,7 +5,7 @@
 
 #include <string>
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 // A path as the kernel takes it: bytes, never empty, no NUL.
 class FilePath
@@ -22,4 +22,4 @@ private:
     std::string m_bytes;
 };
 
-} // namespace cutefish::files
+} // namespace properdesktop::files

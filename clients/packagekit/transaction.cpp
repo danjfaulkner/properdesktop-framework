@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/packagekit/transaction.h"
+#include "properdesktop/packagekit/transaction.h"
 
 #include <tuple>
 #include <utility>
 
-using namespace cutefish::base::dbus;
+using namespace properdesktop::base::dbus;
 
-namespace cutefish::packagekit {
+namespace properdesktop::packagekit {
 
 static constexpr const char* kService = "org.freedesktop.PackageKit";
 static constexpr const char* kPath = "/org/freedesktop/PackageKit";
@@ -234,4 +234,4 @@ void Transaction::finish(Result result)
         done(result);
 }
 
-} // namespace cutefish::packagekit
+} // namespace properdesktop::packagekit

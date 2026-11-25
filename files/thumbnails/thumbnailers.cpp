@@ -20,16 +20,16 @@
 #include "base/file.h"
 #include "base/paths.h"
 #include "base/strings.h"
-#include "cutefish/files/mime_types.h"
-#include "cutefish/files/url.h"
+#include "properdesktop/files/mime_types.h"
+#include "properdesktop/files/url.h"
 #include "../mime_sniffer_p.h"
 #include "../path_utils_p.h"
 
 extern char** environ;
 
-namespace cutefish::files::internal {
+namespace properdesktop::files::internal {
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
 // Decoders of untrusted media can hang; a stuck one must not hold a pool thread for good.
 static constexpr int timeoutMs = 10000;
@@ -315,7 +315,7 @@ ui::Bitmap Thumbnailers::generate(const std::string& path, const std::string& mi
     if (command.empty())
         return {};
 
-    const file::TemporaryDirectory directory("/tmp", "cutefish-thumbnail-");
+    const file::TemporaryDirectory directory("/tmp", "properdesktop-thumbnail-");
     if (!directory.isValid())
         return {};
 
@@ -378,4 +378,4 @@ ui::Bitmap Thumbnailers::generate(const std::string& path, const std::string& mi
     return image;
 }
 
-} // namespace cutefish::files::internal
+} // namespace properdesktop::files::internal

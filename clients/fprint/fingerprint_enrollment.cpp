@@ -1,16 +1,16 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/fprint/fingerprint_enrollment.h"
+#include "properdesktop/fprint/fingerprint_enrollment.h"
 
 #include <chrono>
 #include <cstdio>
 
 #include "device_session.h"
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::fprint {
+namespace properdesktop::fprint {
 
 // Enrolling asks polkit, which may take a password's worth of time.
 static constexpr std::chrono::seconds kTimeout{120};
@@ -126,4 +126,4 @@ void Enrollment::finish(State state)
     changed.emit();
 }
 
-} // namespace cutefish::fprint
+} // namespace properdesktop::fprint

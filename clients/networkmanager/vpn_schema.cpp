@@ -1,19 +1,19 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/networkmanager/vpn_schema.h"
-#include "cutefish/networkmanager/text.h"
-#include "cutefish/networkmanager/types.h"
+#include "properdesktop/networkmanager/vpn_schema.h"
+#include "properdesktop/networkmanager/text.h"
+#include "properdesktop/networkmanager/types.h"
 #include "framework_i18n.h"
 
 #include <algorithm>
 #include <cctype>
 #include <cstdlib>
 
-using cutefish::framework::tr;
-using cutefish::i18n::format;
+using properdesktop::framework::tr;
+using properdesktop::i18n::format;
 
-namespace cutefish::networkmanager::vpn::schema {
+namespace properdesktop::networkmanager::vpn::schema {
 
 namespace {
 
@@ -828,4 +828,4 @@ bool apply(const std::string& kind, const Values& values, const std::map<std::st
     return true;
 }
 
-} // namespace cutefish::networkmanager::vpn::schema
+} // namespace properdesktop::networkmanager::vpn::schema

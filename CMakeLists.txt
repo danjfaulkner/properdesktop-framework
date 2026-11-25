@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(CutefishFramework
+project(ProperDesktopFramework
     VERSION 1.0
     LANGUAGES CXX
 )
@@ -12,10 +12,10 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 include(GNUInstallDirs)
 include(CTest)
-include(CutefishFrameworkHelpers)
+include(ProperDesktopFrameworkHelpers)
 
 add_subdirectory(clients)
 add_subdirectory(files)
 add_subdirectory(pdf)
 
-cutefish_add_translations(cutefish-framework SOURCES clients common files)
+properdesktop_add_translations(properdesktop-framework SOURCES clients common files)

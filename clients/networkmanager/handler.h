@@ -14,16 +14,16 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 #include "base/timer.h"
-#include "cutefish/networkmanager/ip_utils.h"
-#include "cutefish/networkmanager/types.h"
-#include "cutefish/networkmanager/vpn_schema.h"
-#include "cutefish/networkmanager/vpn_utils.h"
+#include "properdesktop/networkmanager/ip_utils.h"
+#include "properdesktop/networkmanager/types.h"
+#include "properdesktop/networkmanager/vpn_schema.h"
+#include "properdesktop/networkmanager/vpn_utils.h"
 
-namespace cutefish::base {
+namespace properdesktop::base {
 class Process;
 }
 
-namespace cutefish::networkmanager {
+namespace properdesktop::networkmanager {
 
 class Client;
 class SecretReader;
@@ -223,4 +223,4 @@ private:
     std::vector<PendingJoin> m_pendingJoins;
 };
 
-} // namespace cutefish::networkmanager
+} // namespace properdesktop::networkmanager

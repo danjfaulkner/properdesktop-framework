@@ -11,11 +11,11 @@
 #include "base/dbus.h"
 #include "base/signal.h"
 
-namespace cutefish::upower {
+namespace properdesktop::upower {
 
 class Device;
 
-// The computer's batteries taken together, as cutefish-services reports
+// The computer's batteries taken together, as properdesktop-services reports
 // them, and whether the system runs on them (UPower's OnBattery). Everything
 // is read asynchronously and kept here, so the getters never block.
 class BatteryStatus
@@ -37,7 +37,7 @@ public:
 
     // Whether the service has answered once; until then available() is false either way.
     bool isReady() const { return m_ready; }
-    // cutefish-services publishes the battery object only when there is a battery.
+    // properdesktop-services publishes the battery object only when there is a battery.
     bool isAvailable() const { return m_available; }
     bool onBattery() const { return m_onBattery; }
 
@@ -88,4 +88,4 @@ private:
     std::vector<std::string> m_batteries;
 };
 
-} // namespace cutefish::upower
+} // namespace properdesktop::upower

@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/accounts/user_account.h"
+#include "properdesktop/accounts/user_account.h"
 
 #include <cerrno>
 #include <chrono>
@@ -11,9 +11,9 @@
 #include <unistd.h>
 #include <vector>
 
-using namespace cutefish::base;
+using namespace properdesktop::base;
 
-namespace cutefish::accounts {
+namespace properdesktop::accounts {
 
 static constexpr const char* kService = "org.freedesktop.Accounts";
 static constexpr const char* kUserInterface = "org.freedesktop.Accounts.User";
@@ -339,4 +339,4 @@ void UserAccount::setPasswordHint(const std::string& hint)
     call(nullptr, std::move(message));
 }
 
-} // namespace cutefish::accounts
+} // namespace properdesktop::accounts

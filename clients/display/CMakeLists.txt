@@ -1,4 +1,4 @@
-cutefish_add_client(display TARGET DisplayClient
+properdesktop_add_client(display TARGET DisplayClient
     SOURCES
         display_client.cpp
         night_light.cpp

@@ -13,7 +13,7 @@
 struct spa_dict;
 struct spa_pod;
 
-namespace cutefish::audio {
+namespace properdesktop::audio {
 
 class Backend;
 
@@ -142,4 +142,4 @@ private:
     int m_profile = -1;
 };
 
-} // namespace cutefish::audio
+} // namespace properdesktop::audio

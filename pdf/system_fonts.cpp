@@ -13,7 +13,7 @@
 
 #include "public/fpdf_sysfontinfo.h"
 
-namespace cutefish::pdf {
+namespace properdesktop::pdf {
 
 static constexpr uint32_t kTableTtcf = 0x74746366;
 
@@ -252,4 +252,4 @@ FPDF_SYSFONTINFO* systemFonts()
     return &info;
 }
 
-} // namespace cutefish::pdf
+} // namespace properdesktop::pdf

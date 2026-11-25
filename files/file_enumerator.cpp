@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 
-#include "cutefish/files/file_enumerator.h"
+#include "properdesktop/files/file_enumerator.h"
 
 #include <algorithm>
 #include <deque>
@@ -14,11 +14,11 @@
 
 #include "async_p.h"
 #include "base/strings.h"
-#include "cutefish/files/file_system_url.h"
+#include "properdesktop/files/file_system_url.h"
 #include "posix_p.h"
 #include "trash_directory_p.h"
 
-namespace cutefish::files {
+namespace properdesktop::files {
 
 using namespace internal;
 
@@ -313,4 +313,4 @@ uint64_t FileEnumerator::size(const std::string& path, OperationContext& ctx)
     return sizeAt(parent.fd.value, parent.name, path, ctx);
 }
 
-} // namespace cutefish::files
+} // namespace properdesktop::files
